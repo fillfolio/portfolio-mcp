@@ -1,0 +1,200 @@
+{
+  "resource": "https://fillfolio.com/api/mcp",
+  "transport": "streamable-http",
+  "scopes": [
+    "mcp:read",
+    "portfolio:read",
+    "holdings:read",
+    "accounts:read",
+    "activity:read"
+  ],
+  "enums": {
+    "assetType": ["stock", "etf", "fund", "crypto", "fx"],
+    "source": ["manual", "brokerage", "wallet"],
+    "costBasisStatus": ["provider", "derived", "manual", "unavailable"],
+    "cashKind": ["cash", "liability"]
+  },
+  "envelope": {
+    "asOf": "string ISO-8601",
+    "partial": "boolean",
+    "missing": "string[]",
+    "data": "tool-specific"
+  },
+  "tools": [
+    {
+      "name": "get_portfolio_summary",
+      "title": "Portfolio summary",
+      "description": "Read the authenticated Fillfolio portfolio summary.",
+      "scope": "portfolio:read",
+      "readOnly": true,
+      "input": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "portfolio": { "type": "string", "maxLength": 160 }
+        }
+      },
+      "data": {
+        "baseCurrency": "string",
+        "portfolios": "integer",
+        "holdings": "integer",
+        "holdingsValue": "number",
+        "cashValue": "number",
+        "debtValue": "number",
+        "netWorth": "number",
+        "totalReturn": "number | null",
+        "totalReturnAvailable": "boolean",
+        "unavailableCostBasisCount": "integer",
+        "missingCurrencyRates": "string[]"
+      }
+    },
+    {
+      "name": "list_portfolios",
+      "title": "List portfolios",
+      "description": "List portfolios belonging to the authenticated Fillfolio user.",
+      "scope": "portfolio:read",
+      "readOnly": true,
+      "input": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "cursor": { "type": "string", "maxLength": 200 },
+          "limit": { "type": "integer", "minimum": 1, "maximum": 100, "default": 50 }
+        }
+      },
+      "item": {
+        "id": "string",
+        "name": "string",
+        "baseCurrency": "string",
+        "createdAt": "string"
+      }
+    },
+    {
+      "name": "list_holdings",
+      "title": "List holdings",
+      "description": "List normalized holdings, current values, cost-basis availability, and trusted 24-hour movement.",
+      "scope": "holdings:read",
+      "readOnly": true,
+      "input": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "cursor": { "type": "string", "maxLength": 200 },
+          "limit": { "type": "integer", "minimum": 1, "maximum": 100, "default": 50 },
+          "portfolio": { "type": "string", "maxLength": 160 },
+          "assetType": { "enum": ["stock", "etf", "fund", "crypto", "fx"] }
+        }
+      },
+      "item": {
+        "assetId": "string",
+        "symbol": "string",
+        "name": "string",
+        "type": "assetType",
+        "portfolio": "string",
+        "account": "string",
+        "source": "source",
+        "quantity": "number",
+        "currency": "string",
+        "marketValue": "number",
+        "costBasis": "number | null",
+        "costBasisStatus": "costBasisStatus",
+        "totalReturn": "number | null",
+        "totalReturnPercent": "number | null",
+        "price24h": "number | null",
+        "conversionComplete": "boolean"
+      }
+    },
+    {
+      "name": "list_cash_and_liabilities",
+      "title": "List cash and liabilities",
+      "description": "List cash accounts and liabilities without provider credentials or account numbers.",
+      "scope": "accounts:read",
+      "readOnly": true,
+      "input": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "cursor": { "type": "string", "maxLength": 200 },
+          "limit": { "type": "integer", "minimum": 1, "maximum": 100, "default": 50 },
+          "portfolio": { "type": "string", "maxLength": 160 }
+        }
+      },
+      "item": {
+        "kind": "cashKind",
+        "account": "string",
+        "portfolio": "string",
+        "amount": "number",
+        "currency": "string",
+        "asOf": "string"
+      }
+    },
+    {
+      "name": "list_activity",
+      "title": "List activity",
+      "description": "List normalized activity available to the authenticated user.",
+      "scope": "activity:read",
+      "readOnly": true,
+      "input": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "cursor": { "type": "string", "maxLength": 200 },
+          "limit": { "type": "integer", "minimum": 1, "maximum": 100, "default": 50 },
+          "startDate": { "type": "string", "format": "date" },
+          "endDate": { "type": "string", "format": "date" },
+          "portfolio": { "type": "string", "maxLength": 160 }
+        },
+        "constraints": [
+          "endDate must be on or after startDate",
+          "date range cannot exceed 366 days"
+        ]
+      },
+      "item": {
+        "id": "string",
+        "date": "string | null",
+        "type": "string",
+        "assetId": "string | null",
+        "amount": "number | null",
+        "currency": "string",
+        "quantity": "number | null",
+        "source": "source"
+      }
+    },
+    {
+      "name": "get_asset",
+      "title": "Get asset",
+      "description": "Get one exact canonical asset and its authenticated holdings.",
+      "scope": "holdings:read",
+      "readOnly": true,
+      "input": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["assetId"],
+        "properties": {
+          "assetId": { "type": "string", "minLength": 1, "maxLength": 240 }
+        }
+      },
+      "data": {
+        "asset": {
+          "id": "string",
+          "symbol": "string",
+          "name": "string",
+          "type": "assetType",
+          "currency": "string",
+          "exchange": "string | null"
+        },
+        "holdings": [
+          {
+            "portfolio": "string",
+            "account": "string",
+            "quantity": "number",
+            "marketValue": "number",
+            "costBasis": "number | null",
+            "costBasisStatus": "costBasisStatus",
+            "totalReturn": "number | null"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "fillfolio": {
+      "url": "https://fillfolio.com/api/mcp"
+    }
+  }
+}

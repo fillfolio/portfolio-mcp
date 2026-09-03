@@ -1,0 +1,26 @@
+{
+  "name": "portfolio-mcp",
+  "version": "1.0.0",
+  "private": false,
+  "description": "Public contract, transport helpers, and connection examples for Fillfolio's hosted portfolio MCP.",
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fillfolio/portfolio-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fillfolio/portfolio-mcp/issues"
+  },
+  "homepage": "https://github.com/fillfolio/portfolio-mcp#readme",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "portfolio",
+    "fillfolio"
+  ],
+  "exports": {
+    "./contract": "./contract/tools.json",
+    "./transport": "./src/transport.ts"
+  }
+}
