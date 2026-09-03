@@ -2,7 +2,7 @@
   "name": "portfolio-mcp",
   "version": "1.0.0",
   "private": false,
-  "description": "Public contract, transport helpers, and connection examples for Fillfolio's hosted portfolio MCP.",
+  "description": "Read-only Fillfolio MCP: connect AI clients to portfolio net worth, stock and ETF holdings, crypto, cash, liabilities, and activity.",
   "license": "MIT",
   "type": "module",
   "repository": {

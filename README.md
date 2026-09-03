@@ -1,21 +1,26 @@
-# Fillfolio portfolio MCP
+# Fillfolio MCP
 
-Public contract and connection docs for Fillfolio's hosted, read-only [Model Context Protocol](https://modelcontextprotocol.io) server.
+Read-only [Model Context Protocol](https://modelcontextprotocol.io) (MCP) access to [Fillfolio](https://fillfolio.com), a portfolio net worth tracker for stocks, ETFs, funds, crypto, currency, cash, and liabilities.
 
-The live endpoint is `https://fillfolio.com/api/mcp`.
+Connect Claude, Cursor, ChatGPT, or another approved AI client to a paid Fillfolio account. The client can read portfolio summaries, holdings, cost basis, cash and debt, activity, and exact asset details. It cannot trade, move money, change holdings, or see credentials.
+
+**Product docs:** [fillfolio.com/mcp](https://fillfolio.com/mcp)  
+**MCP endpoint:** `https://fillfolio.com/api/mcp`
+
+Fillfolio MCP returns the same normalized portfolio already in your account: brokerage holdings, wallet balances, manual lots, cash, credit-card debt, and net worth. Responses include freshness and unavailable FX-rate states. Provider APIs are not called from an MCP request. Revoke access in Fillfolio Settings. Tokens are never displayed.
+
+Access uses OAuth/OIDC with PKCE and the `mcp:read` scope. A paid Fillfolio plan is required.
 
 ## Connect
 
-Use Streamable HTTP against the hosted resource. Tokens belong in the `Authorization: Bearer` header only. Query-string tokens are rejected.
+Use Streamable HTTP. Put tokens in the `Authorization: Bearer` header only. Query-string tokens are rejected.
 
 | Surface | URL |
 | --- | --- |
+| Product docs | [https://fillfolio.com/mcp](https://fillfolio.com/mcp) |
 | MCP | `https://fillfolio.com/api/mcp` |
-| Product docs | `https://fillfolio.com/mcp` |
 | Server card | `https://fillfolio.com/.well-known/mcp.json` |
 | OAuth protected resource | `https://fillfolio.com/.well-known/oauth-protected-resource/api/mcp` |
-
-Access requires a paid Fillfolio account and an approved MCP client. OAuth uses PKCE. The MCP resource remains `https://fillfolio.com/api/mcp`.
 
 Cursor example (`~/.cursor/mcp.json` or project MCP config):
 
@@ -42,20 +47,16 @@ Claude Desktop and other local MCP hosts can use a Streamable HTTP bridge such a
 }
 ```
 
-Revoke access from Fillfolio Settings. A revoked grant is not restored by token refresh.
-
 ## Tools
-
-All tools are read-only. They never trade, write holdings, refresh providers, or return credentials, account numbers, or raw provider payloads.
 
 | Tool | Scope | Purpose |
 | --- | --- | --- |
 | `get_portfolio_summary` | `portfolio:read` | Net worth, holdings value, cash, debt, and return availability |
 | `list_portfolios` | `portfolio:read` | Portfolios for the authenticated user |
-| `list_holdings` | `holdings:read` | Normalized holdings with cost-basis availability |
+| `list_holdings` | `holdings:read` | Stocks, ETFs, funds, crypto, currency, and other holdings with cost-basis availability |
 | `list_cash_and_liabilities` | `accounts:read` | Cash and liabilities without account numbers |
-| `list_activity` | `activity:read` | Normalized activity in a bounded date range |
-| `get_asset` | `holdings:read` | One canonical asset and its holdings |
+| `list_activity` | `activity:read` | Buys, sells, and other activity in a bounded date range |
+| `get_asset` | `holdings:read` | One canonical asset and its holdings across portfolios |
 
 Input and output shapes are in [`contract/tools.json`](contract/tools.json).
 
