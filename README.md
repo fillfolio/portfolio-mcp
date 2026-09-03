@@ -2,7 +2,7 @@
 
 Public contract and connection docs for Fillfolio's hosted, read-only [Model Context Protocol](https://modelcontextprotocol.io) server.
 
-The live endpoint is `https://fillfolio.com/api/mcp`. This repository does not run that server. Product authentication, billing, grants, and portfolio storage stay in the private Fillfolio application.
+The live endpoint is `https://fillfolio.com/api/mcp`.
 
 ## Connect
 
@@ -82,12 +82,6 @@ Holding `source` values are `manual`, `brokerage`, or `wallet`. Date ranges on `
 - 1 MB request body
 - 2 MB response body
 - bounded object depth and node count
-
-## What this repo is not
-
-- Not the Fillfolio web app, Clerk, billing, or D1 grant store
-- Not MarketCaper heatmap MCP (`marketcaper/mcp` and the leftover `fillfolio/marketcaper-mcp` fork)
-- Not a way to mint anonymous credentials
 
 ## License
 
