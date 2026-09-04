@@ -6,7 +6,8 @@ Connect Claude, Cursor, ChatGPT, or another MCP host to a paid Fillfolio account
 
 **Product docs:** [fillfolio.com/mcp](https://fillfolio.com/mcp)  
 **MCP endpoint:** `https://fillfolio.com/api/mcp`  
-**OAuth client ID:** `HfY4RTp08YeBNRYm`
+**OAuth client ID:** `HfY4RTp08YeBNRYm`  
+**Official MCP Registry:** [`com.fillfolio/mcp`](https://registry.modelcontextprotocol.io/v0.1/servers?search=com.fillfolio%2Fmcp)
 
 Fillfolio MCP returns the same normalized portfolio already in your account: brokerage holdings, wallet balances, manual lots, cash, credit-card debt, and net worth. Responses include freshness and unavailable FX-rate states. Provider APIs are not called from an MCP request. Revoke access in Fillfolio Settings. Tokens are never displayed.
 
@@ -25,6 +26,7 @@ Paste the Fillfolio MCP OAuth client ID as a public PKCE client and leave the se
 | Server card alias | `https://fillfolio.com/.well-known/mcp.json` |
 | OAuth protected resource | `https://fillfolio.com/.well-known/oauth-protected-resource/api/mcp` |
 | Auth notes | [https://fillfolio.com/auth.md](https://fillfolio.com/auth.md) |
+| Official MCP Registry | [`com.fillfolio/mcp`](https://registry.modelcontextprotocol.io/v0.1/servers?search=com.fillfolio%2Fmcp) |
 
 Cursor example (`~/.cursor/mcp.json` or project MCP config):
 
