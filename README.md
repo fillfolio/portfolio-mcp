@@ -115,9 +115,9 @@ Holding `source` values are `manual`, `brokerage`, or `wallet`. Date ranges on `
 
 MIT. See [LICENSE](LICENSE).
 
-## Spending & Budgets pilot
+## Spending & Budgets
 
-The bank-first tools below are deployed behind a tester gate. They are not generally available yet. Wider ULTRA/HYPER access waits for live import and natural-update acceptance. Existing portfolio tools and OAuth scopes are unchanged.
+The bank-first tools below are available to active ULTRA and HYPER accounts after explicit bank-spending consent and per-client permissions. Existing portfolio tools and OAuth scopes are unchanged. See [Spending & Budgets](https://fillfolio.com/spending-and-budgets) for supported features and coverage limitations.
 
 | Tool | Explicit additional permission | Purpose |
 | --- | --- | --- |
