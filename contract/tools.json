@@ -351,6 +351,50 @@
           "data": {
             "type": "object",
             "properties": {
+              "reviewSummary": {
+                "type": "object",
+                "properties": {
+                  "total": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  "unresolvedType": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  "unavailableAmountOrCurrency": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  "uncategorized": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  "classificationUncertain": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  },
+                  "postedExcluded": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9007199254740991
+                  }
+                },
+                "required": [
+                  "total",
+                  "unresolvedType",
+                  "unavailableAmountOrCurrency",
+                  "uncategorized",
+                  "classificationUncertain",
+                  "postedExcluded"
+                ],
+                "additionalProperties": false
+              },
               "filters": {
                 "type": "object",
                 "properties": {

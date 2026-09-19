@@ -133,6 +133,11 @@ Amounts use exact integer minor units plus `currency` and `scale`: divide by 10 
 
 `get_spending_summary` and `list_bank_transactions` take inclusive bank dates (`from`/`to`, at most 366 days) and optional account, category and currency filters. Transaction pagination uses `offset` and `limit` (1–100, default 50), plus `total` and `nextOffset` in the result. `list_budgets` takes a calendar `month` in YYYY-MM format. Limits repeat without rollover and actuals cover the full month independently of transaction search or pagination.
 
+The summary's optional `reviewSummary` describes the complete filtered result, independent of list pagination. `total` counts each flagged transaction once; reason counts (`unresolvedType`, `unavailableAmountOrCurrency`, `uncategorized`, `classificationUncertain`) can overlap and must not be added together. `postedExcluded` counts posted, non-user-excluded records omitted from monetary totals because their type, amount or currency is unresolved, counting each record once.
+
+Budget actuals and remaining amounts are `null` when there is no matching spending-enabled currency with a successful stored import. They are not converted from another currency or presented as zero. A zero with matching coverage is valid; incomplete history remains explicitly warned. Dashboard and MCP use the same native-currency calculation service.
+
+
 Responses include `asOf`, applied filters where relevant, synchronization timestamps, `partial` and `missing`. `asOf` is the response calculation time, not a bank refresh time. Existing bank connections retain their original available-history window; new spending-enabled connections request up to 90 days. Incomplete or removed history must not be presented as complete zero spending. Saved limits can be viewed/deleted in Fillfolio after expiry, but spending/budget MCP access requires an eligible active plan.
 
 ### Reviewing transactions and stopping a budget
