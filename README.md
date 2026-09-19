@@ -134,3 +134,11 @@ Amounts use exact integer minor units plus `currency` and `scale`: divide by 10 
 `get_spending_summary` and `list_bank_transactions` take inclusive bank dates (`from`/`to`, at most 366 days) and optional account, category and currency filters. Transaction pagination uses `offset` and `limit` (1–100, default 50), plus `total` and `nextOffset` in the result. `list_budgets` takes a calendar `month` in YYYY-MM format. Limits repeat without rollover and actuals cover the full month independently of transaction search or pagination.
 
 Responses include `asOf`, applied filters where relevant, synchronization timestamps, `partial` and `missing`. `asOf` is the response calculation time, not a bank refresh time. Existing bank connections retain their original available-history window; new spending-enabled connections request up to 90 days. Incomplete or removed history must not be presented as complete zero spending. Saved limits can be viewed/deleted in Fillfolio after expiry, but spending/budget MCP access requires an eligible active plan.
+
+### Reviewing transactions and stopping a budget
+
+Spending and transaction tools accept `review: "required"` to select records that need review. Transaction results include `reviewReasons`, the original and current classifications, and `hasOverride`. User corrections in Fillfolio survive provider updates and pending-to-posted replacements; an incompatible provider direction change requires review again.
+
+`direction` is `"in"`, `"out"`, or `null`, independently of transaction type. Older imported records may not retain their original bank direction; `null` must not be inferred from a merchant name. A transfer can move money either way.
+
+Budget results include `stopped` and `stoppedMonth`. Stopping a recurring limit from a selected month preserves earlier monthly limits; it is different from deleting budget history. A stopped budget has no active remaining allowance. Unreviewed posted classifications or incomplete bank history make recorded progress partial. These tools remain read-only; edits and stops are performed in Fillfolio.
