@@ -14,7 +14,8 @@
       "etf",
       "fund",
       "crypto",
-      "fx"
+      "fx",
+      "other"
     ],
     "source": [
       "manual",
@@ -128,7 +129,8 @@
               "etf",
               "fund",
               "crypto",
-              "fx"
+              "fx",
+              "other"
             ]
           }
         }

@@ -147,3 +147,5 @@ Spending and transaction tools accept `review: "required"` to select records tha
 `direction` is `"in"`, `"out"`, or `null`, independently of transaction type. Older imported records may not retain their original bank direction; `null` must not be inferred from a merchant name. A transfer can move money either way.
 
 Budget results include `stopped` and `stoppedMonth`. Stopping a recurring limit from a selected month preserves earlier monthly limits; it is different from deleting budget history. A stopped budget has no active remaining allowance. Unreviewed posted classifications or incomplete bank history make recorded progress partial. These tools remain read-only; edits and stops are performed in Fillfolio.
+
+Connected investment securities may use asset type `other` for bonds, options, and unclassified instruments. Their values come from the connected institution; missing cost basis and performance remain unavailable. Investment activity is read-only brokerage activity. Bank spending remains under its separate permission scopes. Plaid Investments is gated until production product access is approved and the user grants investment consent.
