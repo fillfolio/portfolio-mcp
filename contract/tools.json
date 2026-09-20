@@ -321,7 +321,14 @@
               "fees",
               "other",
               "uncategorized"
-            ]
+            ],
+            "description": "Budget group filter; independent of the exact provider or user category."
+          },
+          "classification": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 240,
+            "description": "Exact category filter: provider:<detailed or primary code>, custom:<user label>, or unavailable."
           },
           "review": {
             "type": "string",
@@ -439,6 +446,16 @@
                       }
                     ]
                   },
+                  "classification": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
                   "search": {
                     "anyOf": [
                       {
@@ -539,7 +556,8 @@
                     "incomeMinor": {
                       "type": "integer",
                       "minimum": -9007199254740991,
-                      "maximum": 9007199254740991
+                      "maximum": 9007199254740991,
+                      "description": "Posted cash inflows other than transfers or explicitly evidenced refunds; not a tax-income classification."
                     },
                     "netMinor": {
                       "type": "integer",
@@ -609,7 +627,8 @@
                         "fees",
                         "other",
                         "uncategorized"
-                      ]
+                      ],
+                      "description": "Fillfolio budget group; the exact category is in classification."
                     },
                     "spendingMinor": {
                       "type": "integer",
@@ -686,7 +705,14 @@
               "fees",
               "other",
               "uncategorized"
-            ]
+            ],
+            "description": "Budget group filter; independent of the exact provider or user category."
+          },
+          "classification": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 240,
+            "description": "Exact category filter: provider:<detailed or primary code>, custom:<user label>, or unavailable."
           },
           "review": {
             "type": "string",
@@ -769,6 +795,16 @@
                     ]
                   },
                   "category": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "classification": {
                     "anyOf": [
                       {
                         "type": "string"
@@ -925,6 +961,78 @@
                         "fees",
                         "other",
                         "uncategorized"
+                      ],
+                      "description": "Fillfolio budget group; the exact category is in classification."
+                    },
+                    "budgetGroup": {
+                      "type": "string",
+                      "enum": [
+                        "housing",
+                        "groceries",
+                        "dining",
+                        "transport",
+                        "shopping",
+                        "health",
+                        "utilities",
+                        "travel",
+                        "entertainment",
+                        "fees",
+                        "other",
+                        "uncategorized"
+                      ],
+                      "description": "Fillfolio budget group; the exact category is in classification."
+                    },
+                    "classification": {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "type": "string"
+                        },
+                        "source": {
+                          "type": "string",
+                          "enum": [
+                            "provider",
+                            "manual",
+                            "unavailable"
+                          ]
+                        },
+                        "primary": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "detailed": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "label",
+                        "source",
+                        "primary",
+                        "detailed"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "transactionCode": {
+                      "anyOf": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "null"
+                        }
                       ]
                     },
                     "excluded": {
@@ -981,16 +1089,8 @@
                         "fees",
                         "other",
                         "uncategorized"
-                      ]
-                    },
-                    "hasOverride": {
-                      "type": "boolean"
-                    },
-                    "reviewReasons": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
+                      ],
+                      "description": "Fillfolio budget group; the exact category is in classification."
                     },
                     "categorySource": {
                       "type": "string",
@@ -1001,6 +1101,9 @@
                         "uncategorized"
                       ],
                       "description": "Provenance of the effective category; independent of transaction-type certainty. Merchant rule snapshots do not rewrite earlier transactions when rules change."
+                    },
+                    "hasOverride": {
+                      "type": "boolean"
                     },
                     "hasCategoryOverride": {
                       "type": "boolean"
@@ -1057,7 +1160,8 @@
                             {
                               "type": "null"
                             }
-                          ]
+                          ],
+                          "description": "Provider confidence is informational and does not require user confirmation."
                         }
                       },
                       "required": [
@@ -1067,6 +1171,12 @@
                         "confidence"
                       ],
                       "additionalProperties": false
+                    },
+                    "reviewReasons": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
                     }
                   },
                   "required": [
@@ -1246,7 +1356,8 @@
                         "fees",
                         "other",
                         "uncategorized"
-                      ]
+                      ],
+                      "description": "Fillfolio budget group; the exact category is in classification."
                     },
                     "currency": {
                       "type": "string"
@@ -1275,6 +1386,12 @@
                         }
                       ]
                     },
+                    "missing": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
                     "spentMinor": {
                       "anyOf": [
                         {
@@ -1301,12 +1418,6 @@
                     },
                     "partial": {
                       "type": "boolean"
-                    },
-                    "missing": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
                     }
                   },
                   "required": [
