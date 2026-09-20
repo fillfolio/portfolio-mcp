@@ -1001,6 +1001,72 @@
                         "uncategorized"
                       ],
                       "description": "Provenance of the effective category; independent of transaction-type certainty. Merchant rule snapshots do not rewrite earlier transactions when rules change."
+                    },
+                    "hasCategoryOverride": {
+                      "type": "boolean"
+                    },
+                    "hasKindOverride": {
+                      "type": "boolean"
+                    },
+                    "categoryMode": {
+                      "type": "string",
+                      "enum": [
+                        "automatic",
+                        "bank",
+                        "manual"
+                      ]
+                    },
+                    "providerCategory": {
+                      "type": "object",
+                      "properties": {
+                        "primary": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "detailed": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "version": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "confidence": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "primary",
+                        "detailed",
+                        "version",
+                        "confidence"
+                      ],
+                      "additionalProperties": false
                     }
                   },
                   "required": [
@@ -1235,6 +1301,12 @@
                     },
                     "partial": {
                       "type": "boolean"
+                    },
+                    "missing": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
                     }
                   },
                   "required": [
