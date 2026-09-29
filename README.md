@@ -102,7 +102,7 @@ Every successful tool result is wrapped as:
 
 Holding `source` values are `manual`, `brokerage`, or `wallet`. Date ranges on `list_activity` cannot exceed 366 days. Pagination uses `cursor` plus `limit` (1 to 100, default 50).
 
-The optional `correction` field on `list_activity` identifies owner corrections and provider-resolved corrections, with the stored provider type, subtype, signed amount and correction date. The existing `type` and `amount` fields contain the effective values: deposits are negative and withdrawals positive. Corrections affect activity only; they do not recalculate holdings or cash balances. Owners make corrections in Fillfolio where the feature is enabled. MCP remains read-only.
+The optional `correction` field on `list_activity` identifies owner corrections and provider-resolved corrections, with the stored provider type, subtype, signed amount and correction date. The existing `type` and `amount` fields contain the effective values. For corrected Plaid cash activity, deposits are negative and withdrawals positive; other activity retains its existing source conventions. Corrections affect activity only; they do not recalculate holdings or cash balances. Owners make corrections in Fillfolio where the feature is enabled. MCP remains read-only.
 
 If provider data changes and a correction needs review, Fillfolio blocks activity reads for that portfolio until the owner resolves it in Transactions. Holdings and cash tools remain available. A shadowed private connection stays outside these portfolio results.
 
