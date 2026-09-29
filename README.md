@@ -102,6 +102,10 @@ Every successful tool result is wrapped as:
 
 Holding `source` values are `manual`, `brokerage`, or `wallet`. Date ranges on `list_activity` cannot exceed 366 days. Pagination uses `cursor` plus `limit` (1 to 100, default 50).
 
+The optional `correction` field on `list_activity` identifies owner corrections and provider-resolved corrections, with the stored provider type, subtype, signed amount and correction date. The existing `type` and `amount` fields contain the effective values: deposits are negative and withdrawals positive. Corrections affect activity only; they do not recalculate holdings or cash balances. Owners make corrections in Fillfolio where the feature is enabled. MCP remains read-only.
+
+If provider data changes and a correction needs review, Fillfolio blocks activity reads for that portfolio until the owner resolves it in Transactions. Holdings and cash tools remain available. A shadowed private connection stays outside these portfolio results.
+
 ## Transport limits
 
 [`src/transport.ts`](src/transport.ts) is the public request-bounding helper used by the hosted server:
@@ -148,4 +152,4 @@ Spending and transaction tools accept `review: "required"` to select records tha
 
 Budget results include `stopped` and `stoppedMonth`. Stopping a recurring limit from a selected month preserves earlier monthly limits; it is different from deleting budget history. A stopped budget has no active remaining allowance. Unreviewed posted classifications or incomplete bank history make recorded progress partial. These tools remain read-only; edits and stops are performed in Fillfolio.
 
-Connected investment securities may use asset type `other` for bonds, options, and unclassified instruments. Their values come from the connected institution; missing cost basis and performance remain unavailable. Investment activity is read-only brokerage activity. Bank spending remains under its separate permission scopes. Plaid Investments is gated until production product access is approved and the user grants investment consent.
+Connected investment securities may use asset type `other` for bonds, options, and unclassified instruments. Their values come from the connected institution; missing cost basis and performance remain unavailable. Investment activity is read-only brokerage activity. Bank spending remains under its separate permission scopes. Plaid Investments is enabled for eligible paid users who grant investment consent. Institution availability and imported data coverage vary.
