@@ -1,0 +1,55 @@
+{
+  "asOf": "2026-09-29T00:00:00.000Z",
+  "partial": false,
+  "missing": [],
+  "data": {
+    "items": [
+      {
+        "id": "activity_synthetic_legacy",
+        "date": "2026-09-28",
+        "type": "buy",
+        "assetId": "synthetic:stock",
+        "amount": -12.5,
+        "currency": "USD",
+        "quantity": 0.125,
+        "source": "brokerage"
+      },
+      {
+        "id": "activity_synthetic_corrected",
+        "date": "2026-09-28",
+        "type": "deposit",
+        "assetId": null,
+        "amount": -25,
+        "currency": "USD",
+        "quantity": null,
+        "source": "brokerage",
+        "correction": {
+          "correctionStatus": "corrected",
+          "correctedAt": "2026-09-29T00:00:00.000Z",
+          "providerType": "cash",
+          "providerSubtype": "withdrawal",
+          "providerAmount": 25
+        }
+      },
+      {
+        "id": "activity_synthetic_provider_resolved",
+        "date": "2026-09-28",
+        "type": "deposit",
+        "assetId": null,
+        "amount": -25,
+        "currency": "USD",
+        "quantity": null,
+        "source": "brokerage",
+        "correction": {
+          "correctionStatus": "provider_resolved",
+          "correctedAt": "2026-09-29T00:00:00.000Z",
+          "providerType": "cash",
+          "providerSubtype": "deposit",
+          "providerAmount": -25
+        }
+      }
+    ],
+    "nextCursor": null,
+    "total": 3
+  }
+}
