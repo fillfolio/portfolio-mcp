@@ -8,11 +8,14 @@ ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / 'docs'
 SOURCES = DOCS / 'sources'
 CANONICAL = 'https://fillfolio.github.io/portfolio-mcp/'
+BRAND_LINKS = '[Developer website](https://fillfolio.com/) · [Official MCP connection page](https://fillfolio.com/mcp)'
 
 def read_json(name):
     return json.loads((SOURCES / name).read_text())
 
 def write(name, content):
+    if name.endswith('.md') and BRAND_LINKS not in content:
+        content = content.rstrip() + '\n\n' + BRAND_LINKS
     (DOCS / name).write_text(content.strip() + '\n')
 
 def json_block(value):
@@ -120,12 +123,12 @@ def main():
         'Account reads require an eligible paid Fillfolio account, accepted preregistered client/callback, OAuth mcp:read with PKCE S256 and resource binding, and consent. Spending and budgets require independent internal client grants. DCR is disabled.', '',
         'Existing ChatGPT Work desktop and Codex setups passed live acceptance before this snapshot. Claude web and Claude Code have registered identities, with no new live acceptance claimed here. Other clients need accepted registration. Native ChatGPT plugin 0.1.1 remains In review as of 2026-10-16.', '',
         'Tools read stored data and cannot trade, transfer, edit records, or refresh providers. Opening a dashboard view shares its displayed financial data with the chat. Hide amounts masks the panel only. Keep currencies, nulls, partial warnings, coverage and synchronization fields. Response generation time does not establish quote freshness.', '',
-        '## Documentation']
+        BRAND_LINKS, '', '## Documentation']
     for path, title in [('connect','Connect a client'),('skills','Workflow catalog and existing release ZIPs'),('tools','Ten-tool reference'),('examples','Invented data examples'),('data','Currency, pagination and completeness rules'),('security','Access and sharing'),('tutorial','First portfolio review tutorial'),('downloads','Exact source commits and checksums')]:
         llms.append(f'- [{title}]({CANONICAL}{path}/)')
     llms += ['', '## Canonical sources', '- [MCP contract and helper](https://github.com/fillfolio/portfolio-mcp)', '- [Workflow skills](https://github.com/fillfolio/portfolio-mcp-skills)', '- [Complete documentation text](' + CANONICAL + 'llms-full.txt)']
     write('llms.txt', '\n'.join(llms))
-    full = ['# Fillfolio MCP complete documentation', '', f'Snapshot {metadata["snapshotDate"]}. Canonical {CANONICAL}', '',
+    full = ['# Fillfolio MCP complete documentation', '', f'Snapshot {metadata["snapshotDate"]}. Canonical {CANONICAL}', '', BRAND_LINKS, '',
             'Public sources: ' + json.dumps(metadata['repositories'], sort_keys=True), '']
     for name in ('index','connect','skills','tools','examples','data','security','tutorial','downloads','maintain'):
         full += ['\n---\n', f'Source: {CANONICAL}' + ('' if name == 'index' else name + '/'), '', (DOCS/(name+'.md')).read_text()]

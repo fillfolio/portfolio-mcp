@@ -32,5 +32,7 @@ nav:
   - Downloads and sources: downloads.md
   - Maintain this snapshot: maintain.md
   - Refresh public inputs: sources/snapshot-source-update.md
+  - Developer website: https://fillfolio.com/
+  - Official MCP connection page: https://fillfolio.com/mcp
 extra_css:
   - css/extra.css

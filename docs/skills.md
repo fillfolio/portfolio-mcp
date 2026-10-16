@@ -207,3 +207,5 @@ SHA-256:
 ```text
 de7b736361b8da6d4bca8efa184904cf114686b4965cd2937f12fdb0b6dfbe74
 ```
+
+[Developer website](https://fillfolio.com/) · [Official MCP connection page](https://fillfolio.com/mcp)

@@ -68,4 +68,6 @@ A supporting MCP App host can call `open_fillfolio` with `{}`. Opening a dashboa
 
 Use Fillfolio Settings to revoke later reads. The tools cannot trade, move money, edit records, or refresh providers. For source, releases, support, and contributions, use [the public GitHub repositories](https://github.com/fillfolio).
 
+[Developer website](https://fillfolio.com/) · [Official MCP connection page](https://fillfolio.com/mcp)
+
 Publication date: **2026-10-16**. Original: <https://fillfolio.github.io/portfolio-mcp/tutorial/>. Public materials: MIT. Fillfolio is operated by VMPRO LLC.

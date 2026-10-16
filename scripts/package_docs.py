@@ -11,6 +11,10 @@ ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / 'docs'
 PAGES = [('index','Overview'),('connect','Connect a client'),('skills','Workflow skills'),('tools','Tool reference'),('examples','Synthetic examples'),('data','Read data correctly'),('security','Security and access'),('tutorial','Portfolio review tutorial'),('downloads','Downloads and sources')]
 CANONICAL = 'https://fillfolio.github.io/portfolio-mcp/'
+BRAND_LINKS = '[Developer website](https://fillfolio.com/) · [Official MCP connection page](https://fillfolio.com/mcp)'
+
+def with_brand_links(content):
+    return content if BRAND_LINKS in content else content.rstrip() + '\n\n' + BRAND_LINKS + '\n'
 
 def write(path, text):
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -54,14 +58,14 @@ def main():
         'theme':'mint', 'name':'Fillfolio MCP',
         'colors':{'primary':'#2463EB','light':'#60A5FA','dark':'#1D4ED8'},
         'navigation':{'groups':[{'group':'Public documentation','pages':[name for name,_ in PAGES]}]},
-        'navbar':{'links':[{'label':'GitHub source','href':'https://github.com/fillfolio/portfolio-mcp'}]},
+        'navbar':{'links':[{'label':'GitHub source','href':'https://github.com/fillfolio/portfolio-mcp'}, {'label':'Developer website','href':'https://fillfolio.com/'}, {'label':'Official MCP connection page','href':'https://fillfolio.com/mcp'}]},
         'footer':{'socials':{'github':'https://github.com/fillfolio/portfolio-mcp'}}
     }
     write(mint/'docs.json',json.dumps(config,indent=2))
     for name, title in PAGES:
         text = (DOCS/(name+'.md')).read_text()
         # Inline source links use the canonical static site, so the editor import needs no local assets.
-        text = absolute_markdown_links(text)
+        text = with_brand_links(absolute_markdown_links(text))
         text = re.sub(r'<(https?://[^>]+)>',r'[\1](\1)',text)
         # Use manually authored pages as MDX; fenced schemas remain literal code.
         text = re.sub(r'^# .+\n','',text,count=1).lstrip()
@@ -144,8 +148,15 @@ The tools read stored records. They cannot trade, transfer funds, edit records o
 
 Official public snapshot · 2026-10-16. [Privacy](https://fillfolio.com/privacy) · [Canonical GitHub source](https://github.com/fillfolio/portfolio-mcp).
 ''')
+    for page in book.glob('*.md'):
+        content = page.read_text()
+        if page.name == 'SUMMARY.md':
+            content += '\n* [Developer website](https://fillfolio.com/)\n* [Official MCP connection page](https://fillfolio.com/mcp)\n'
+        else:
+            content = with_brand_links(content)
+        write(page, content)
     archive(book, output/'fillfolio-gitbook-quickstart-2026-10-16.zip')
-    article = absolute_markdown_links((DOCS/'tutorial.md').read_text())
+    article = with_brand_links(absolute_markdown_links((DOCS/'tutorial.md').read_text()))
     write(output/'hashnode-tutorial.md',article)
     write(output/'hashnode-publication.json',json.dumps({'title':'Read a Fillfolio portfolio without mixing currencies or freshness','canonicalUrl':CANONICAL+'tutorial/','tags':['mcp','open-source','ai','portfolio'],'publicationMode':'manual-one-time','aiAssistanceDisclosure':'Fillfolio prepared this technical walkthrough with AI assistance and checked it against the public contracts and synthetic examples.','sourceDate':'2026-10-16'},indent=2))
     write(output/'github-announcement.md','''
@@ -163,6 +174,7 @@ The tools cannot trade, move money, edit records, or refresh providers. Opening 
 
 GitHub remains the source for releases, support, and contributions. Documentation copies are dated snapshots with manual updates.
 ''')
+    write(output/'github-announcement.md', with_brand_links((output/'github-announcement.md').read_text()))
     manifest = {'snapshotDate':'2026-10-16','canonicalUrl':CANONICAL,'sourceInputs':json.loads((DOCS/'sources/snapshot.json').read_text()),'artifacts':[]}
     for path in sorted(output.glob('*')):
         if path.is_file() and path.suffix in ('.zip','.md','.json','.yml') and path.name != 'artifact-manifest.json':

@@ -1,5 +1,7 @@
 # Fillfolio MCP: contracts and workflow skills
 
+[Developer website](https://fillfolio.com/) · [Official MCP connection page](https://fillfolio.com/mcp)
+
 Use Fillfolio's public tool reference and 15 workflow skills to ask an AI assistant about stored stocks, ETFs, funds, crypto, cash, spending, and budgets. Supported brokerage, exchange, bank, and blockchain connections provide different records; you can also use records you added to Fillfolio.
 
 These public materials use the **MIT license**. Fillfolio operates the authenticated service at `https://fillfolio.com/api/mcp`. Account reads require an eligible paid Fillfolio plan, an accepted client, and consent. The public connection catalog needs no account. These repositories contain contracts, examples, a request-bounding helper, and skill instructions. You cannot self-host Fillfolio's private service from them.

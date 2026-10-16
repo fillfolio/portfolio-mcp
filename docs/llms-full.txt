@@ -2,6 +2,8 @@
 
 Snapshot 2026-10-16. Canonical https://fillfolio.github.io/portfolio-mcp/
 
+[Developer website](https://fillfolio.com/) · [Official MCP connection page](https://fillfolio.com/mcp)
+
 Public sources: {"portfolio-mcp": {"commit": "86f8b914c33239fbb38ae442ae27f3ca2c490ebc", "url": "https://github.com/fillfolio/portfolio-mcp"}, "portfolio-mcp-skills": {"commit": "31d7ed31ce9c97e4a2db289245b8cc4cc3a2c4a5", "url": "https://github.com/fillfolio/portfolio-mcp-skills"}}
 
 
@@ -10,6 +12,8 @@ Public sources: {"portfolio-mcp": {"commit": "86f8b914c33239fbb38ae442ae27f3ca2c
 Source: https://fillfolio.github.io/portfolio-mcp/
 
 # Fillfolio MCP: contracts and workflow skills
+
+[Developer website](https://fillfolio.com/) · [Official MCP connection page](https://fillfolio.com/mcp)
 
 Use Fillfolio's public tool reference and 15 workflow skills to ask an AI assistant about stored stocks, ETFs, funds, crypto, cash, spending, and budgets. Supported brokerage, exchange, bank, and blockchain connections provide different records; you can also use records you added to Fillfolio.
 
@@ -321,6 +325,8 @@ SHA-256:
 ```text
 de7b736361b8da6d4bca8efa184904cf114686b4965cd2937f12fdb0b6dfbe74
 ```
+
+[Developer website](https://fillfolio.com/) · [Official MCP connection page](https://fillfolio.com/mcp)
 
 
 ---
@@ -921,6 +927,8 @@ Availability: Active ULTRA/HYPER accounts with explicit bank consent and per-cli
 
 Data keys: `month`, `synchronization`, `items`. See the complete output schema in the linked contract.
 
+[Developer website](https://fillfolio.com/) · [Official MCP connection page](https://fillfolio.com/mcp)
+
 
 ---
 
@@ -1128,6 +1136,8 @@ A supporting MCP App host can call `open_fillfolio` with `{}`. Opening a dashboa
 
 Use Fillfolio Settings to revoke later reads. The tools cannot trade, move money, edit records, or refresh providers. For source, releases, support, and contributions, use [the public GitHub repositories](https://github.com/fillfolio).
 
+[Developer website](https://fillfolio.com/) · [Official MCP connection page](https://fillfolio.com/mcp)
+
 Publication date: **2026-10-16**. Original: <https://fillfolio.github.io/portfolio-mcp/tutorial/>. Public materials: MIT. Fillfolio is operated by VMPRO LLC.
 
 
@@ -1177,6 +1187,8 @@ Compare the result with the exact hash listed for that file. A checksum verifies
 Use [portfolio-mcp issues](https://github.com/fillfolio/portfolio-mcp/issues) for contract/docs reports and [portfolio-mcp-skills issues](https://github.com/fillfolio/portfolio-mcp-skills/issues) for workflow reports. Do not post financial records or credentials in a public issue.
 
 Public materials use MIT. Fillfolio operates the hosted service under separate [terms](https://fillfolio.com/terms) and [privacy disclosures](https://fillfolio.com/privacy).
+
+[Developer website](https://fillfolio.com/) · [Official MCP connection page](https://fillfolio.com/mcp)
 
 
 ---

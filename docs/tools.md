@@ -591,3 +591,5 @@ Availability: Active ULTRA/HYPER accounts with explicit bank consent and per-cli
 ### Returned fields
 
 Data keys: `month`, `synchronization`, `items`. See the complete output schema in the linked contract.
+
+[Developer website](https://fillfolio.com/) · [Official MCP connection page](https://fillfolio.com/mcp)

@@ -40,3 +40,5 @@ Compare the result with the exact hash listed for that file. A checksum verifies
 Use [portfolio-mcp issues](https://github.com/fillfolio/portfolio-mcp/issues) for contract/docs reports and [portfolio-mcp-skills issues](https://github.com/fillfolio/portfolio-mcp-skills/issues) for workflow reports. Do not post financial records or credentials in a public issue.
 
 Public materials use MIT. Fillfolio operates the hosted service under separate [terms](https://fillfolio.com/terms) and [privacy disclosures](https://fillfolio.com/privacy).
+
+[Developer website](https://fillfolio.com/) · [Official MCP connection page](https://fillfolio.com/mcp)
