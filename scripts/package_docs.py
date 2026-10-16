@@ -65,7 +65,7 @@ def main():
         text = re.sub(r'<(https?://[^>]+)>',r'[\1](\1)',text)
         # Use manually authored pages as MDX; fenced schemas remain literal code.
         text = re.sub(r'^# .+\n','',text,count=1).lstrip()
-        write(mint/(name+'.mdx'), '---\ntitle: '+json.dumps(title)+'\ndescription: "Official public documentation snapshot dated 2026-10-16. GitHub is the canonical source."\n---\n\n'+text+'\n\nOfficial public snapshot · 2026-10-16. [Latest source, releases, support, and contributions](https://github.com/fillfolio/portfolio-mcp) are on GitHub. [Preferred documentation]('+CANONICAL+').')
+        write(mint/(name+'.mdx'), '---\ntitle: '+json.dumps(title)+'\ncanonical: '+json.dumps(CANONICAL + ('' if name == 'index' else name + '/'))+'\ndescription: "Official public documentation snapshot dated 2026-10-16. GitHub is the canonical source."\n---\n\n'+text+'\n\nOfficial public snapshot · 2026-10-16. [Latest source, releases, support, and contributions](https://github.com/fillfolio/portfolio-mcp) are on GitHub. [Preferred documentation]('+CANONICAL+').')
     write(mint/'MANUAL-IMPORT.txt','Use the existing free Mintlify Starter web editor. Add each MDX page and paste its content; use docs.json for navigation if the editor supports it. Do not connect GitHub, start a paid trial, enable AI rewriting, or enter billing details. If the free editor cannot publish these pages without a trial, record the blocker. Set canonical URLs to the matching GitHub Pages routes where supported. A ZIP archive is a handoff bundle, not a claim that Mintlify supports ZIP import.')
     archive(mint, output/'fillfolio-mintlify-manual-content-2026-10-16.zip')
     book = output/'gitbook-quickstart'
