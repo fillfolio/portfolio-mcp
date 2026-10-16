@@ -1,0 +1,26 @@
+# Fillfolio MCP public documentation
+
+> MIT contracts and 15 instruction-only workflows for stored Fillfolio portfolio, stocks, ETFs, funds, crypto, cash, spending, and budget reads.
+
+Snapshot: 2026-10-16. Canonical documentation: https://fillfolio.github.io/portfolio-mcp/
+
+Account reads require an eligible paid Fillfolio account, accepted preregistered client/callback, OAuth mcp:read with PKCE S256 and resource binding, and consent. Spending and budgets require independent internal client grants. DCR is disabled.
+
+Existing ChatGPT Work desktop and Codex setups passed live acceptance before this snapshot. Claude web and Claude Code have registered identities, with no new live acceptance claimed here. Other clients need accepted registration. Native ChatGPT plugin 0.1.1 remains In review as of 2026-10-16.
+
+Tools read stored data and cannot trade, transfer, edit records, or refresh providers. Opening a dashboard view shares its displayed financial data with the chat. Hide amounts masks the panel only. Keep currencies, nulls, partial warnings, coverage and synchronization fields. Response generation time does not establish quote freshness.
+
+## Documentation
+- [Connect a client](https://fillfolio.github.io/portfolio-mcp/connect/)
+- [Workflow catalog and existing release ZIPs](https://fillfolio.github.io/portfolio-mcp/skills/)
+- [Ten-tool reference](https://fillfolio.github.io/portfolio-mcp/tools/)
+- [Invented data examples](https://fillfolio.github.io/portfolio-mcp/examples/)
+- [Currency, pagination and completeness rules](https://fillfolio.github.io/portfolio-mcp/data/)
+- [Access and sharing](https://fillfolio.github.io/portfolio-mcp/security/)
+- [First portfolio review tutorial](https://fillfolio.github.io/portfolio-mcp/tutorial/)
+- [Exact source commits and checksums](https://fillfolio.github.io/portfolio-mcp/downloads/)
+
+## Canonical sources
+- [MCP contract and helper](https://github.com/fillfolio/portfolio-mcp)
+- [Workflow skills](https://github.com/fillfolio/portfolio-mcp-skills)
+- [Complete documentation text](https://fillfolio.github.io/portfolio-mcp/llms-full.txt)

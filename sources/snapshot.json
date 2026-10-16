@@ -1,0 +1,131 @@
+{
+  "snapshotDate": "2026-10-16",
+  "canonicalUrl": "https://fillfolio.github.io/portfolio-mcp/",
+  "repositories": {
+    "portfolio-mcp": {
+      "url": "https://github.com/fillfolio/portfolio-mcp",
+      "commit": "86f8b914c33239fbb38ae442ae27f3ca2c490ebc"
+    },
+    "portfolio-mcp-skills": {
+      "url": "https://github.com/fillfolio/portfolio-mcp-skills",
+      "commit": "31d7ed31ce9c97e4a2db289245b8cc4cc3a2c4a5"
+    }
+  },
+  "contractSha256": "bfde99fe6ac31d04be1a66497b3eca1fb9178e4b5320fc5c7e79788008e7b6d6",
+  "catalogSha256": "83eed03de20c851fe698e5cfc816246a7d19be12b5f7a83af70f6fe7e4c8ed23",
+  "skillsRelease": {
+    "tag": "v0.1.0",
+    "url": "https://github.com/fillfolio/portfolio-mcp-skills/releases/tag/v0.1.0",
+    "commit": "f913279652e875c8de6b7d76d20c44189a71327a",
+    "assets": [
+      {
+        "name": "fillfolio-asset-review.zip",
+        "size": 2866,
+        "digest": "sha256:816c639aebfd76ee481ae4493394f3ad1ac744d194875350232b071c7f67568a",
+        "browser_download_url": "https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-asset-review.zip"
+      },
+      {
+        "name": "fillfolio-budget-review.zip",
+        "size": 4846,
+        "digest": "sha256:7eb7025dc60bd9abee52ed90c5c8cce3f7bfe3ea294b201900aca7713b8b4ca1",
+        "browser_download_url": "https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-budget-review.zip"
+      },
+      {
+        "name": "fillfolio-cash-debt-review.zip",
+        "size": 2961,
+        "digest": "sha256:c6e4a78c22ba6ef12929905d6ba75f5848596a744c2bf7cc9aad39fee5bb0ad5",
+        "browser_download_url": "https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-cash-debt-review.zip"
+      },
+      {
+        "name": "fillfolio-compare-portfolios.zip",
+        "size": 3051,
+        "digest": "sha256:3056348d93b49742c608c5ae4a223e0d474cd84dc06fda672f65c346de89fc51",
+        "browser_download_url": "https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-compare-portfolios.zip"
+      },
+      {
+        "name": "fillfolio-compare-spending.zip",
+        "size": 4576,
+        "digest": "sha256:99c677d6f3f4dfe03ecf0d6e78460e59f333740fa98305be4644d7f78fa482d1",
+        "browser_download_url": "https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-compare-spending.zip"
+      },
+      {
+        "name": "fillfolio-concentration-review.zip",
+        "size": 3067,
+        "digest": "sha256:e8f6ecd2b712959e689544855a8a587c102734e67bd6cd285159f419bc5a40d3",
+        "browser_download_url": "https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-concentration-review.zip"
+      },
+      {
+        "name": "fillfolio-connect.zip",
+        "size": 3178,
+        "digest": "sha256:55255829a6d82a65bc9c9694b2a84516a8371d41d430907d706cabfe6fab1d0e",
+        "browser_download_url": "https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-connect.zip"
+      },
+      {
+        "name": "fillfolio-cost-basis-review.zip",
+        "size": 3022,
+        "digest": "sha256:ce327da4b012f0f955e488b7a9bf0dae398ad481b979c03928be7ca8e24a3de8",
+        "browser_download_url": "https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-cost-basis-review.zip"
+      },
+      {
+        "name": "fillfolio-holdings-allocation.zip",
+        "size": 3028,
+        "digest": "sha256:956ad7ff942ba16652339df13ba43b3aa164609782d0f2f0d9ce08ec6f0d6bb7",
+        "browser_download_url": "https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-holdings-allocation.zip"
+      },
+      {
+        "name": "fillfolio-investment-activity.zip",
+        "size": 3166,
+        "digest": "sha256:d8bed9eafec55c699c2423ddac6cf212d32aab2ad888743672a95d6bc89a2f36",
+        "browser_download_url": "https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-investment-activity.zip"
+      },
+      {
+        "name": "fillfolio-merchant-review.zip",
+        "size": 4512,
+        "digest": "sha256:deff4802d3e716fded3b15bbb4980709fe1aca2a8fdb02c67070e05e850be14b",
+        "browser_download_url": "https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-merchant-review.zip"
+      },
+      {
+        "name": "fillfolio-portfolio-overview.zip",
+        "size": 2880,
+        "digest": "sha256:cca9524d2e49b40fe2651c5cba5e961c7fc35ce7052890d7f5613a9c2a5524d9",
+        "browser_download_url": "https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-portfolio-overview.zip"
+      },
+      {
+        "name": "fillfolio-public-connections.zip",
+        "size": 2550,
+        "digest": "sha256:de7b736361b8da6d4bca8efa184904cf114686b4965cd2937f12fdb0b6dfbe74",
+        "browser_download_url": "https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-public-connections.zip"
+      },
+      {
+        "name": "fillfolio-spending-overview.zip",
+        "size": 4229,
+        "digest": "sha256:843f0df665a5cf53446f51e747d73d14c4688f4c9ae5059daa828850722fe060",
+        "browser_download_url": "https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-spending-overview.zip"
+      },
+      {
+        "name": "fillfolio-transaction-review.zip",
+        "size": 4664,
+        "digest": "sha256:09e8de8d43333da96558f6252b3f58c26f20c563651551d1a38681aa90ec160d",
+        "browser_download_url": "https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-transaction-review.zip"
+      },
+      {
+        "name": "portfolio-mcp-skills-v0.1.0.zip",
+        "size": 107524,
+        "digest": "sha256:444617bcfc2156686a01cfb97ebe49841873264fe230695ea4e40063d12ffd72",
+        "browser_download_url": "https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/portfolio-mcp-skills-v0.1.0.zip"
+      },
+      {
+        "name": "release-manifest.json",
+        "size": 6770,
+        "digest": "sha256:d3b8c4df8a5bcfc815ac8bb9d25f9d5728ca09d9729151ca1be299b3d432cd51",
+        "browser_download_url": "https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/release-manifest.json"
+      },
+      {
+        "name": "SHA256SUMS",
+        "size": 1749,
+        "digest": "sha256:79cfd9042691b2e1d41d587e383028c3450294ebcc55eda6dc938113025baac7",
+        "browser_download_url": "https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/SHA256SUMS"
+      }
+    ]
+  }
+}

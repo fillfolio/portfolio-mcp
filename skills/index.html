@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://fillfolio.github.io/portfolio-mcp/skills/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Workflow skills - Fillfolio MCP documentation</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" disabled>
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../css/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Fillfolio MCP documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../connect/" class="nav-link">Connect a client</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Workflow skills</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../tools/" class="nav-link">Tool reference</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../examples/" class="nav-link">Synthetic examples</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../data/" class="nav-link">Read data correctly</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../security/" class="nav-link">Security and access</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../tutorial/" class="nav-link">Tutorial</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../downloads/" class="nav-link">Downloads and sources</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../maintain/" class="nav-link">Maintain this snapshot</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../sources/snapshot-source-update/" class="nav-link">Refresh public inputs</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                            <li class="nav-item">
+                                <a rel="prev" href="../connect/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../tools/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/fillfolio/portfolio-mcp" class="nav-link">fillfolio/portfolio-mcp</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <button id="theme-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme" class="nav-link dropdown-toggle">
+                                <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                <span class="d-lg-none ms-2">Toggle theme</span>
+                              </button>
+                              <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                                    <i class="fa-solid fa-sun fa-fw"></i>
+                                    <span class="ms-2">Light</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                                    <i class="fa-solid fa-moon fa-fw"></i>
+                                    <span class="ms-2">Dark</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="true">
+                                    <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                    <span class="ms-2">Auto</span>
+                                    <i class="fa-solid fa-check ms-auto"></i>
+                                  </button>
+                                </li>
+                              </ul>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="../js/darkmode.js"></script>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#workflow-skills" class="nav-link">Workflow skills</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#fillfolio-connect" class="nav-link">fillfolio-connect</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#fillfolio-portfolio-overview" class="nav-link">fillfolio-portfolio-overview</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#fillfolio-holdings-allocation" class="nav-link">fillfolio-holdings-allocation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#fillfolio-concentration-review" class="nav-link">fillfolio-concentration-review</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#fillfolio-asset-review" class="nav-link">fillfolio-asset-review</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#fillfolio-compare-portfolios" class="nav-link">fillfolio-compare-portfolios</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#fillfolio-cost-basis-review" class="nav-link">fillfolio-cost-basis-review</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#fillfolio-cash-debt-review" class="nav-link">fillfolio-cash-debt-review</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#fillfolio-investment-activity" class="nav-link">fillfolio-investment-activity</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#fillfolio-spending-overview" class="nav-link">fillfolio-spending-overview</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#fillfolio-compare-spending" class="nav-link">fillfolio-compare-spending</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#fillfolio-merchant-review" class="nav-link">fillfolio-merchant-review</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#fillfolio-transaction-review" class="nav-link">fillfolio-transaction-review</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#fillfolio-budget-review" class="nav-link">fillfolio-budget-review</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#fillfolio-public-connections" class="nav-link">fillfolio-public-connections</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="workflow-skills">Workflow skills<a class="headerlink" href="#workflow-skills" title="Permanent link">&para;</a></h1>
+<p>Library <strong>0.1.0</strong> contains <strong>15</strong> instruction-only workflows. Source snapshot: <strong>2026-10-16</strong>, <a href="https://github.com/fillfolio/portfolio-mcp-skills/commit/31d7ed31ce9c97e4a2db289245b8cc4cc3a2c4a5"><code>31d7ed31ce9c97e4a2db289245b8cc4cc3a2c4a5</code></a>.</p>
+<p>Install only the workflows you need. Use an existing release ZIP or copy its canonical skill folder to the directory your host documents. Keep <code>SKILL.md</code> and references together. A ZIP installer needs the skill folder at the archive root.</p>
+<p>For Codex, copy a selected folder to <code>~/.agents/skills/&lt;skill-name&gt;</code>. For Claude Code, use <code>~/.claude/skills/&lt;skill-name&gt;</code>. Follow the <a href="https://github.com/fillfolio/portfolio-mcp-skills/blob/31d7ed31ce9c97e4a2db289245b8cc4cc3a2c4a5/docs/client-setup.md">source client setup guide</a> for host-specific installation and compatibility limits.</p>
+<p>The first fourteen workflows use authenticated MCP. The public connection catalog uses unauthenticated HTTP and requires a host with an HTTP/web capability. Installing instructions does not connect your account.</p>
+<p>The ZIPs below belong to the existing <strong>v0.1.0</strong> release. Source links point to the current captured repository commit; later documentation fixes can differ from the earlier release snapshot. No new skill archives accompany this site.</p>
+<table>
+<thead>
+<tr>
+<th>Workflow</th>
+<th>Tools</th>
+<th>Existing ZIP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#fillfolio-connect">Connect or open Fillfolio</a></td>
+<td><code>open_fillfolio</code>, <code>get_portfolio_summary</code></td>
+<td><a href="https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-connect.zip">Download</a></td>
+</tr>
+<tr>
+<td><a href="#fillfolio-portfolio-overview">Portfolio overview</a></td>
+<td><code>get_portfolio_summary</code>, <code>list_portfolios</code></td>
+<td><a href="https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-portfolio-overview.zip">Download</a></td>
+</tr>
+<tr>
+<td><a href="#fillfolio-holdings-allocation">Holdings allocation</a></td>
+<td><code>get_portfolio_summary</code>, <code>list_portfolios</code>, <code>list_holdings</code></td>
+<td><a href="https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-holdings-allocation.zip">Download</a></td>
+</tr>
+<tr>
+<td><a href="#fillfolio-concentration-review">Concentration review</a></td>
+<td><code>get_portfolio_summary</code>, <code>list_portfolios</code>, <code>list_holdings</code>, <code>get_asset</code></td>
+<td><a href="https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-concentration-review.zip">Download</a></td>
+</tr>
+<tr>
+<td><a href="#fillfolio-asset-review">Exact asset review</a></td>
+<td><code>get_portfolio_summary</code>, <code>list_portfolios</code>, <code>list_holdings</code>, <code>get_asset</code></td>
+<td><a href="https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-asset-review.zip">Download</a></td>
+</tr>
+<tr>
+<td><a href="#fillfolio-compare-portfolios">Compare portfolios</a></td>
+<td><code>get_portfolio_summary</code>, <code>list_portfolios</code>, <code>list_holdings</code></td>
+<td><a href="https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-compare-portfolios.zip">Download</a></td>
+</tr>
+<tr>
+<td><a href="#fillfolio-cost-basis-review">Cost basis and current return</a></td>
+<td><code>get_portfolio_summary</code>, <code>list_portfolios</code>, <code>list_holdings</code></td>
+<td><a href="https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-cost-basis-review.zip">Download</a></td>
+</tr>
+<tr>
+<td><a href="#fillfolio-cash-debt-review">Cash and debt</a></td>
+<td><code>get_portfolio_summary</code>, <code>list_portfolios</code>, <code>list_cash_and_liabilities</code></td>
+<td><a href="https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-cash-debt-review.zip">Download</a></td>
+</tr>
+<tr>
+<td><a href="#fillfolio-investment-activity">Investment activity</a></td>
+<td><code>list_portfolios</code>, <code>list_activity</code>, <code>get_asset</code></td>
+<td><a href="https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-investment-activity.zip">Download</a></td>
+</tr>
+<tr>
+<td><a href="#fillfolio-spending-overview">Spending overview</a></td>
+<td><code>get_spending_summary</code>, <code>list_bank_transactions</code></td>
+<td><a href="https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-spending-overview.zip">Download</a></td>
+</tr>
+<tr>
+<td><a href="#fillfolio-compare-spending">Compare spending periods</a></td>
+<td><code>get_spending_summary</code>, <code>list_bank_transactions</code></td>
+<td><a href="https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-compare-spending.zip">Download</a></td>
+</tr>
+<tr>
+<td><a href="#fillfolio-merchant-review">Merchant transactions</a></td>
+<td><code>get_spending_summary</code>, <code>list_bank_transactions</code></td>
+<td><a href="https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-merchant-review.zip">Download</a></td>
+</tr>
+<tr>
+<td><a href="#fillfolio-transaction-review">Transaction review queue</a></td>
+<td><code>get_spending_summary</code>, <code>list_bank_transactions</code></td>
+<td><a href="https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-transaction-review.zip">Download</a></td>
+</tr>
+<tr>
+<td><a href="#fillfolio-budget-review">Monthly budgets</a></td>
+<td><code>get_spending_summary</code>, <code>list_bank_transactions</code>, <code>list_budgets</code></td>
+<td><a href="https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-budget-review.zip">Download</a></td>
+</tr>
+<tr>
+<td><a href="#fillfolio-public-connections">Public connection catalog</a></td>
+<td>Public HTTP catalog</td>
+<td><a href="https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-public-connections.zip">Download</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="fillfolio-connect">fillfolio-connect<a class="headerlink" href="#fillfolio-connect" title="Permanent link">&para;</a></h2>
+<p>Connect or open Fillfolio. Authenticated MCP; account and client permissions apply.</p>
+<p><a href="https://github.com/fillfolio/portfolio-mcp-skills/tree/31d7ed31ce9c97e4a2db289245b8cc4cc3a2c4a5/skills/fillfolio-connect">Canonical source folder</a> · <a href="https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-connect.zip">Existing release ZIP</a></p>
+<p>SHA-256:</p>
+<pre><code class="language-text">55255829a6d82a65bc9c9694b2a84516a8371d41d430907d706cabfe6fab1d0e
+</code></pre>
+<h2 id="fillfolio-portfolio-overview">fillfolio-portfolio-overview<a class="headerlink" href="#fillfolio-portfolio-overview" title="Permanent link">&para;</a></h2>
+<p>Portfolio overview. Authenticated MCP; account and client permissions apply.</p>
+<p><a href="https://github.com/fillfolio/portfolio-mcp-skills/tree/31d7ed31ce9c97e4a2db289245b8cc4cc3a2c4a5/skills/fillfolio-portfolio-overview">Canonical source folder</a> · <a href="https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-portfolio-overview.zip">Existing release ZIP</a></p>
+<p>SHA-256:</p>
+<pre><code class="language-text">cca9524d2e49b40fe2651c5cba5e961c7fc35ce7052890d7f5613a9c2a5524d9
+</code></pre>
+<h2 id="fillfolio-holdings-allocation">fillfolio-holdings-allocation<a class="headerlink" href="#fillfolio-holdings-allocation" title="Permanent link">&para;</a></h2>
+<p>Holdings allocation. Authenticated MCP; account and client permissions apply.</p>
+<p><a href="https://github.com/fillfolio/portfolio-mcp-skills/tree/31d7ed31ce9c97e4a2db289245b8cc4cc3a2c4a5/skills/fillfolio-holdings-allocation">Canonical source folder</a> · <a href="https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-holdings-allocation.zip">Existing release ZIP</a></p>
+<p>SHA-256:</p>
+<pre><code class="language-text">956ad7ff942ba16652339df13ba43b3aa164609782d0f2f0d9ce08ec6f0d6bb7
+</code></pre>
+<h2 id="fillfolio-concentration-review">fillfolio-concentration-review<a class="headerlink" href="#fillfolio-concentration-review" title="Permanent link">&para;</a></h2>
+<p>Concentration review. Authenticated MCP; account and client permissions apply.</p>
+<p><a href="https://github.com/fillfolio/portfolio-mcp-skills/tree/31d7ed31ce9c97e4a2db289245b8cc4cc3a2c4a5/skills/fillfolio-concentration-review">Canonical source folder</a> · <a href="https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-concentration-review.zip">Existing release ZIP</a></p>
+<p>SHA-256:</p>
+<pre><code class="language-text">e8f6ecd2b712959e689544855a8a587c102734e67bd6cd285159f419bc5a40d3
+</code></pre>
+<h2 id="fillfolio-asset-review">fillfolio-asset-review<a class="headerlink" href="#fillfolio-asset-review" title="Permanent link">&para;</a></h2>
+<p>Exact asset review. Authenticated MCP; account and client permissions apply.</p>
+<p><a href="https://github.com/fillfolio/portfolio-mcp-skills/tree/31d7ed31ce9c97e4a2db289245b8cc4cc3a2c4a5/skills/fillfolio-asset-review">Canonical source folder</a> · <a href="https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-asset-review.zip">Existing release ZIP</a></p>
+<p>SHA-256:</p>
+<pre><code class="language-text">816c639aebfd76ee481ae4493394f3ad1ac744d194875350232b071c7f67568a
+</code></pre>
+<h2 id="fillfolio-compare-portfolios">fillfolio-compare-portfolios<a class="headerlink" href="#fillfolio-compare-portfolios" title="Permanent link">&para;</a></h2>
+<p>Compare portfolios. Authenticated MCP; account and client permissions apply.</p>
+<p><a href="https://github.com/fillfolio/portfolio-mcp-skills/tree/31d7ed31ce9c97e4a2db289245b8cc4cc3a2c4a5/skills/fillfolio-compare-portfolios">Canonical source folder</a> · <a href="https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-compare-portfolios.zip">Existing release ZIP</a></p>
+<p>SHA-256:</p>
+<pre><code class="language-text">3056348d93b49742c608c5ae4a223e0d474cd84dc06fda672f65c346de89fc51
+</code></pre>
+<h2 id="fillfolio-cost-basis-review">fillfolio-cost-basis-review<a class="headerlink" href="#fillfolio-cost-basis-review" title="Permanent link">&para;</a></h2>
+<p>Cost basis and current return. Authenticated MCP; account and client permissions apply.</p>
+<p><a href="https://github.com/fillfolio/portfolio-mcp-skills/tree/31d7ed31ce9c97e4a2db289245b8cc4cc3a2c4a5/skills/fillfolio-cost-basis-review">Canonical source folder</a> · <a href="https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-cost-basis-review.zip">Existing release ZIP</a></p>
+<p>SHA-256:</p>
+<pre><code class="language-text">ce327da4b012f0f955e488b7a9bf0dae398ad481b979c03928be7ca8e24a3de8
+</code></pre>
+<h2 id="fillfolio-cash-debt-review">fillfolio-cash-debt-review<a class="headerlink" href="#fillfolio-cash-debt-review" title="Permanent link">&para;</a></h2>
+<p>Cash and debt. Authenticated MCP; account and client permissions apply.</p>
+<p><a href="https://github.com/fillfolio/portfolio-mcp-skills/tree/31d7ed31ce9c97e4a2db289245b8cc4cc3a2c4a5/skills/fillfolio-cash-debt-review">Canonical source folder</a> · <a href="https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-cash-debt-review.zip">Existing release ZIP</a></p>
+<p>SHA-256:</p>
+<pre><code class="language-text">c6e4a78c22ba6ef12929905d6ba75f5848596a744c2bf7cc9aad39fee5bb0ad5
+</code></pre>
+<h2 id="fillfolio-investment-activity">fillfolio-investment-activity<a class="headerlink" href="#fillfolio-investment-activity" title="Permanent link">&para;</a></h2>
+<p>Investment activity. Authenticated MCP; account and client permissions apply.</p>
+<p><a href="https://github.com/fillfolio/portfolio-mcp-skills/tree/31d7ed31ce9c97e4a2db289245b8cc4cc3a2c4a5/skills/fillfolio-investment-activity">Canonical source folder</a> · <a href="https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-investment-activity.zip">Existing release ZIP</a></p>
+<p>SHA-256:</p>
+<pre><code class="language-text">d8bed9eafec55c699c2423ddac6cf212d32aab2ad888743672a95d6bc89a2f36
+</code></pre>
+<h2 id="fillfolio-spending-overview">fillfolio-spending-overview<a class="headerlink" href="#fillfolio-spending-overview" title="Permanent link">&para;</a></h2>
+<p>Spending overview. Authenticated MCP; account and client permissions apply.</p>
+<p><a href="https://github.com/fillfolio/portfolio-mcp-skills/tree/31d7ed31ce9c97e4a2db289245b8cc4cc3a2c4a5/skills/fillfolio-spending-overview">Canonical source folder</a> · <a href="https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-spending-overview.zip">Existing release ZIP</a></p>
+<p>SHA-256:</p>
+<pre><code class="language-text">843f0df665a5cf53446f51e747d73d14c4688f4c9ae5059daa828850722fe060
+</code></pre>
+<h2 id="fillfolio-compare-spending">fillfolio-compare-spending<a class="headerlink" href="#fillfolio-compare-spending" title="Permanent link">&para;</a></h2>
+<p>Compare spending periods. Authenticated MCP; account and client permissions apply.</p>
+<p><a href="https://github.com/fillfolio/portfolio-mcp-skills/tree/31d7ed31ce9c97e4a2db289245b8cc4cc3a2c4a5/skills/fillfolio-compare-spending">Canonical source folder</a> · <a href="https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-compare-spending.zip">Existing release ZIP</a></p>
+<p>SHA-256:</p>
+<pre><code class="language-text">99c677d6f3f4dfe03ecf0d6e78460e59f333740fa98305be4644d7f78fa482d1
+</code></pre>
+<h2 id="fillfolio-merchant-review">fillfolio-merchant-review<a class="headerlink" href="#fillfolio-merchant-review" title="Permanent link">&para;</a></h2>
+<p>Merchant transactions. Authenticated MCP; account and client permissions apply.</p>
+<p><a href="https://github.com/fillfolio/portfolio-mcp-skills/tree/31d7ed31ce9c97e4a2db289245b8cc4cc3a2c4a5/skills/fillfolio-merchant-review">Canonical source folder</a> · <a href="https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-merchant-review.zip">Existing release ZIP</a></p>
+<p>SHA-256:</p>
+<pre><code class="language-text">deff4802d3e716fded3b15bbb4980709fe1aca2a8fdb02c67070e05e850be14b
+</code></pre>
+<h2 id="fillfolio-transaction-review">fillfolio-transaction-review<a class="headerlink" href="#fillfolio-transaction-review" title="Permanent link">&para;</a></h2>
+<p>Transaction review queue. Authenticated MCP; account and client permissions apply.</p>
+<p><a href="https://github.com/fillfolio/portfolio-mcp-skills/tree/31d7ed31ce9c97e4a2db289245b8cc4cc3a2c4a5/skills/fillfolio-transaction-review">Canonical source folder</a> · <a href="https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-transaction-review.zip">Existing release ZIP</a></p>
+<p>SHA-256:</p>
+<pre><code class="language-text">09e8de8d43333da96558f6252b3f58c26f20c563651551d1a38681aa90ec160d
+</code></pre>
+<h2 id="fillfolio-budget-review">fillfolio-budget-review<a class="headerlink" href="#fillfolio-budget-review" title="Permanent link">&para;</a></h2>
+<p>Monthly budgets. Authenticated MCP; account and client permissions apply.</p>
+<p><a href="https://github.com/fillfolio/portfolio-mcp-skills/tree/31d7ed31ce9c97e4a2db289245b8cc4cc3a2c4a5/skills/fillfolio-budget-review">Canonical source folder</a> · <a href="https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-budget-review.zip">Existing release ZIP</a></p>
+<p>SHA-256:</p>
+<pre><code class="language-text">7eb7025dc60bd9abee52ed90c5c8cce3f7bfe3ea294b201900aca7713b8b4ca1
+</code></pre>
+<h2 id="fillfolio-public-connections">fillfolio-public-connections<a class="headerlink" href="#fillfolio-public-connections" title="Permanent link">&para;</a></h2>
+<p>Public connection catalog. Public HTTP; no account sign-in. This workflow cannot read private records.</p>
+<p><a href="https://github.com/fillfolio/portfolio-mcp-skills/tree/31d7ed31ce9c97e4a2db289245b8cc4cc3a2c4a5/skills/fillfolio-public-connections">Canonical source folder</a> · <a href="https://github.com/fillfolio/portfolio-mcp-skills/releases/download/v0.1.0/fillfolio-public-connections.zip">Existing release ZIP</a></p>
+<p>SHA-256:</p>
+<pre><code class="language-text">de7b736361b8da6d4bca8efa184904cf114686b4965cd2937f12fdb0b6dfbe74
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+
+  <hr>
+  <p>Official public snapshot · 2026-10-16. Latest source, releases, support, and contributions are on <a href="https://github.com/fillfolio/portfolio-mcp">GitHub</a>.</p>
+  <p>Public contracts and skills: MIT. Hosted Fillfolio access has separate account, plan, and permission requirements. <a href="https://github.com/fillfolio/portfolio-mcp-skills">Skills repository</a> · <a href="https://fillfolio.com/privacy">Privacy</a></p>
+
+
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

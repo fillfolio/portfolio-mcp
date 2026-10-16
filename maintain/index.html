@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://fillfolio.github.io/portfolio-mcp/maintain/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Maintain this snapshot - Fillfolio MCP documentation</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" disabled>
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../css/extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Fillfolio MCP documentation</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../connect/" class="nav-link">Connect a client</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../skills/" class="nav-link">Workflow skills</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../tools/" class="nav-link">Tool reference</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../examples/" class="nav-link">Synthetic examples</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../data/" class="nav-link">Read data correctly</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../security/" class="nav-link">Security and access</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../tutorial/" class="nav-link">Tutorial</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../downloads/" class="nav-link">Downloads and sources</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Maintain this snapshot</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../sources/snapshot-source-update/" class="nav-link">Refresh public inputs</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                            <li class="nav-item">
+                                <a rel="prev" href="../downloads/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../sources/snapshot-source-update/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/fillfolio/portfolio-mcp" class="nav-link">fillfolio/portfolio-mcp</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <button id="theme-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme" class="nav-link dropdown-toggle">
+                                <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                <span class="d-lg-none ms-2">Toggle theme</span>
+                              </button>
+                              <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                                    <i class="fa-solid fa-sun fa-fw"></i>
+                                    <span class="ms-2">Light</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                                    <i class="fa-solid fa-moon fa-fw"></i>
+                                    <span class="ms-2">Dark</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="true">
+                                    <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                    <span class="ms-2">Auto</span>
+                                    <i class="fa-solid fa-check ms-auto"></i>
+                                  </button>
+                                </li>
+                              </ul>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="../js/darkmode.js"></script>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#maintain-this-documentation-snapshot" class="nav-link">Maintain this documentation snapshot</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#build-offline-after-dependency-installation" class="nav-link">Build offline after dependency installation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#manual-publication-routes" class="nav-link">Manual publication routes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#announcements" class="nav-link">Announcements</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="maintain-this-documentation-snapshot">Maintain this documentation snapshot<a class="headerlink" href="#maintain-this-documentation-snapshot" title="Permanent link">&para;</a></h1>
+<p>GitHub holds the canonical source and support channels. Documentation copies show a dated snapshot. This publication has no synchronization job or recurring posting schedule.</p>
+<h2 id="build-offline-after-dependency-installation">Build offline after dependency installation<a class="headerlink" href="#build-offline-after-dependency-installation" title="Permanent link">&para;</a></h2>
+<p>Use Python 3.10 or later and a local virtual environment:</p>
+<pre><code class="language-sh">python3 -m venv .venv-docs
+.venv-docs/bin/python -m pip install -r requirements-docs.txt
+.venv-docs/bin/python scripts/build_docs.py
+.venv-docs/bin/python -m mkdocs build --strict
+.venv-docs/bin/python scripts/check_docs.py
+</code></pre>
+<p>The generator reads the captured public contract and skill catalog from this repository. It requires no account, credentials, network fetch, or live financial data. <code>check_docs.py</code> checks the generated contract/catalog references, fixture arithmetic, canonical tags, and local site links.</p>
+<p>To update the snapshot, review both current public repositories, refresh the three files in <code>docs/sources/</code> using the instructions in <a href="../sources/snapshot-source-update/">snapshot-source-update.md</a>, change the date and source references in the authored pages, rebuild, and verify. Keep release archive links pinned to the release you checked. A new source snapshot does not require a new skills release.</p>
+<h2 id="manual-publication-routes">Manual publication routes<a class="headerlink" href="#manual-publication-routes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>GitHub Pages:</strong> copy the generated <code>site/</code> contents to a dedicated <code>gh-pages</code> branch, include <code>.nojekyll</code>, and configure Pages to serve that branch's root. No scheduled workflow is needed.</li>
+<li><strong>Cloudflare Pages:</strong> use Direct Upload with the generated <code>site/</code> directory or its ZIP. Use a free provider subdomain. Do not connect GitHub or enable build hooks.</li>
+<li><strong>GitLab Pages:</strong> use the existing public MCP copy and a dedicated deployment branch. Upload the validated static-site ZIP and use <code>publication/gitlab-pages.yml</code> as <code>.gitlab-ci.yml</code> on <code>codex/docs-pages</code>. The pipeline extracts that ZIP into <code>public/</code>. It permits only a manually started web pipeline; repository pushes cannot start it. Run the manual pipeline on the deployment branch without changing imported source branches.</li>
+<li><strong>Read the Docs Community:</strong> import the public repository URL, select the documentation source branch, and use <code>.readthedocs.yaml</code>. Disable webhooks and automatic build triggers; start an initial build by hand. Keep only this repository's MIT code/skill documentation in that project. Stop if the platform requires a paid commercial plan.</li>
+<li><strong>Mintlify Starter:</strong> import the prepared Markdown/MDX pages through the web editor. Keep Git sync, AI features, paid trials, and billing setup off. Use the generated navigation from the manual publication bundle.</li>
+<li><strong>GitBook Free:</strong> import the distinct quickstart Markdown ZIP. Use ordinary Free, with Git sync and AI rewriting off.</li>
+</ul>
+<p>Review the actual free-plan status before publishing. Skip a route that asks for payment, a trial, or card setup. Set the preferred canonical URL to <code>https://fillfolio.github.io/portfolio-mcp/</code> where the host supports it. Keep the snapshot date and GitHub source links on each copy.</p>
+<h2 id="announcements">Announcements<a class="headerlink" href="#announcements" title="Permanent link">&para;</a></h2>
+<p>The <a href="../tutorial/">tutorial</a> is the original article. A manual Hashnode cross-post should retain its canonical URL. Publish one GitHub Announcements discussion for both repositories. Use GitHub issues and contributions rather than new help desks on the mirror hosts.</p>
+<p>No financial operations, client registrations, or production authentication changes belong in this documentation rollout.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+
+  <hr>
+  <p>Official public snapshot · 2026-10-16. Latest source, releases, support, and contributions are on <a href="https://github.com/fillfolio/portfolio-mcp">GitHub</a>.</p>
+  <p>Public contracts and skills: MIT. Hosted Fillfolio access has separate account, plan, and permission requirements. <a href="https://github.com/fillfolio/portfolio-mcp-skills">Skills repository</a> · <a href="https://fillfolio.com/privacy">Privacy</a></p>
+
+
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
