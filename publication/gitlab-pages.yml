@@ -1,0 +1,19 @@
+# Upload this file as .gitlab-ci.yml on branch codex/docs-pages only.
+# Upload the validated site ZIP alongside it. Only manual web pipelines can run.
+workflow:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "web" && $CI_COMMIT_BRANCH == "codex/docs-pages"'
+      when: always
+    - when: never
+
+publish-docs:
+  image: alpine:3.22
+  script:
+    - mkdir -p public
+    - unzip -q fillfolio-mcp-static-site-2026-10-16.zip -d public
+    - test -s public/index.html
+    - test -s public/llms.txt
+  pages:
+    publish: public
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "web" && $CI_COMMIT_BRANCH == "codex/docs-pages"'

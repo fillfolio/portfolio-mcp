@@ -1,0 +1,54 @@
+{
+  "synthetic": true,
+  "responseTime": "2026-10-16T12:00:00Z",
+  "reportCurrency": "USD",
+  "holdings": [
+    {
+      "name": "Synthetic Alpha Equity",
+      "sourceCurrency": "USD",
+      "marketValue": 600,
+      "costBasis": 500
+    },
+    {
+      "name": "Synthetic Beta Fund",
+      "sourceCurrency": "USD",
+      "marketValue": 500,
+      "costBasis": 400
+    },
+    {
+      "name": "Synthetic Euro Fund",
+      "sourceCurrency": "EUR",
+      "sourceMarketValue": 220,
+      "sourceCostBasis": 200,
+      "illustrativeFxToUSD": 1.1,
+      "marketValue": 242,
+      "costBasis": 220
+    }
+  ],
+  "cash": 9980,
+  "debt": 410,
+  "holdingsValue": 1342,
+  "netWorth": 10912,
+  "availableCostBasis": 1120,
+  "currentValueLessAvailableBasis": 222,
+  "postedSpending": [
+    {
+      "currency": "USD",
+      "scale": 2,
+      "purchaseMinor": 12500,
+      "refundMinor": 2500,
+      "netSpentMinor": 10000,
+      "budgetLimitMinor": 15000,
+      "remainingMinor": 5000
+    },
+    {
+      "currency": "EUR",
+      "scale": 2,
+      "purchaseMinor": 4200,
+      "refundMinor": 0,
+      "netSpentMinor": 4200
+    }
+  ],
+  "quoteTimestampAvailable": false,
+  "historicalPerformanceAvailable": false
+}

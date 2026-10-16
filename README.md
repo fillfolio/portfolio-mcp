@@ -8,6 +8,7 @@ This MIT repository contains the public tool contract, connection examples and r
 | --- | --- |
 | MCP endpoint and resource | `https://fillfolio.com/api/mcp` |
 | Connection guide | [llms-install.md](llms-install.md) |
+| Public developer hub | [Contracts, skills, setup and examples](https://fillfolio.github.io/portfolio-mcp/) |
 | Product documentation | [fillfolio.com/mcp](https://fillfolio.com/mcp) |
 | Plans | [Fillfolio pricing](https://fillfolio.com/pricing) |
 | Official MCP Registry | [`com.fillfolio/mcp`](https://registry.modelcontextprotocol.io/v0.1/servers?search=com.fillfolio%2Fmcp) |

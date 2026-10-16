@@ -1,0 +1,5 @@
+/* Keep MkDocs' built-in layout; long schemas and hashes scroll within their boxes. */
+pre { overflow: auto; }
+td code { overflow-wrap: anywhere; }
+footer { font-size: .875rem; }
+@media (max-width: 640px) { table { display: block; overflow-x: auto; } }

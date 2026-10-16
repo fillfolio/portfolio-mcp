@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://fillfolio.github.io/portfolio-mcp/sitemap.xml

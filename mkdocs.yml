@@ -1,0 +1,36 @@
+site_name: Fillfolio MCP documentation
+site_description: MIT tool contracts and workflow skills for reading stored Fillfolio portfolio, holdings, cash, spending and budget data through accepted MCP clients.
+site_url: https://fillfolio.github.io/portfolio-mcp/
+repo_url: https://github.com/fillfolio/portfolio-mcp
+repo_name: fillfolio/portfolio-mcp
+edit_uri: ''
+copyright: 'Fillfolio · VMPRO LLC · MIT public materials · Snapshot 2026-10-16'
+use_directory_urls: true
+strict: true
+theme:
+  name: mkdocs
+  color_mode: auto
+  user_color_mode_toggle: true
+  navigation_depth: 2
+  locale: en
+  custom_dir: publication/mkdocs-theme
+plugins: []
+markdown_extensions:
+  - tables
+  - fenced_code
+  - toc:
+      permalink: true
+nav:
+  - Overview: index.md
+  - Connect a client: connect.md
+  - Workflow skills: skills.md
+  - Tool reference: tools.md
+  - Synthetic examples: examples.md
+  - Read data correctly: data.md
+  - Security and access: security.md
+  - Tutorial: tutorial.md
+  - Downloads and sources: downloads.md
+  - Maintain this snapshot: maintain.md
+  - Refresh public inputs: sources/snapshot-source-update.md
+extra_css:
+  - css/extra.css

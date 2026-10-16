@@ -4,3 +4,7 @@ node_modules/
 .env
 .env.*
 dist/
+
+# Static documentation builds and local environments
+site/
+.venv-docs/
