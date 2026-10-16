@@ -10,6 +10,8 @@ Existing ChatGPT Work desktop and Codex setups passed live acceptance before thi
 
 Tools read stored data and cannot trade, transfer, edit records, or refresh providers. Opening a dashboard view shares its displayed financial data with the chat. Hide amounts masks the panel only. Keep currencies, nulls, partial warnings, coverage and synchronization fields. Response generation time does not establish quote freshness.
 
+[Developer website](https://fillfolio.com/) · [Official MCP connection page](https://fillfolio.com/mcp)
+
 ## Documentation
 - [Connect a client](https://fillfolio.github.io/portfolio-mcp/connect/)
 - [Workflow catalog and existing release ZIPs](https://fillfolio.github.io/portfolio-mcp/skills/)
