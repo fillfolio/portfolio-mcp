@@ -1,8 +1,8 @@
 {
   "name": "portfolio-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
-  "description": "Read-only Fillfolio MCP: connect AI clients to portfolio net worth, stock and ETF holdings, crypto, cash, liabilities, and activity.",
+  "description": "Read-only Fillfolio MCP contracts for portfolios, holdings, cash, spending and budgets.",
   "license": "MIT",
   "type": "module",
   "repository": {
@@ -17,10 +17,20 @@
     "mcp",
     "model-context-protocol",
     "portfolio",
+    "holdings",
+    "stocks",
+    "etfs",
+    "funds",
+    "crypto",
+    "spending",
+    "budgets",
     "fillfolio"
   ],
   "exports": {
     "./contract": "./contract/tools.json",
     "./transport": "./src/transport.ts"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs"
   }
 }

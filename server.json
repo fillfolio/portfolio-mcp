@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.fillfolio/mcp",
   "title": "Fillfolio MCP",
-  "description": "Read-only Fillfolio portfolio: net worth, holdings, cash, liabilities, and activity.",
-  "version": "1.0.0",
+  "description": "Read-only Fillfolio portfolios, holdings, cash, liabilities, activity, spending and budgets.",
+  "version": "1.0.1",
   "websiteUrl": "https://fillfolio.com/mcp",
   "repository": {
     "url": "https://github.com/fillfolio/portfolio-mcp",
@@ -14,7 +14,9 @@
     {
       "src": "https://fillfolio.com/android-chrome-192x192.png",
       "mimeType": "image/png",
-      "sizes": ["192x192"]
+      "sizes": [
+        "192x192"
+      ]
     }
   ],
   "remotes": [

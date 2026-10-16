@@ -1,8 +1,0 @@
-{
-  "mcpServers": {
-    "fillfolio": {
-      "command": "npx",
-      "args": ["-y", "mcp-remote", "https://fillfolio.com/api/mcp"]
-    }
-  }
-}

@@ -31,6 +31,10 @@
     "cashKind": [
       "cash",
       "liability"
+    ],
+    "missingValuationReason": [
+      "missing_quote",
+      "missing_asset_metadata"
     ]
   },
   "envelope": {
@@ -40,6 +44,50 @@
     "data": "tool-specific"
   },
   "tools": [
+    {
+      "name": "open_fillfolio",
+      "title": "Open Fillfolio",
+      "description": "Open a read-only Fillfolio dashboard for the authenticated user's portfolio, spending, and budgets. The app loads only the selected view from stored data. Use Fillfolio's read tools when answering questions in chat.",
+      "scope": "portfolio:read",
+      "readOnly": true,
+      "input": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false,
+        "idempotentHint": true
+      },
+      "_meta": {
+        "securitySchemes": [
+          {
+            "type": "oauth2",
+            "scopes": [
+              "mcp:read"
+            ]
+          }
+        ],
+        "ui": {
+          "resourceUri": "ui://fillfolio/dashboard-v4.html"
+        },
+        "openai/ui": {
+          "entrypoints": [
+            {
+              "type": "global"
+            },
+            {
+              "type": "thread"
+            }
+          ]
+        }
+      },
+      "result": {
+        "content": "Launch text only; no financial envelope. Read the advertised UI resource on supporting hosts."
+      }
+    },
     {
       "name": "get_portfolio_summary",
       "title": "Portfolio summary",
@@ -60,14 +108,39 @@
         "baseCurrency": "string",
         "portfolios": "integer",
         "holdings": "integer",
-        "holdingsValue": "number",
-        "cashValue": "number",
-        "debtValue": "number",
-        "netWorth": "number",
+        "holdingsValue": "number | null",
+        "cashValue": "number | null",
+        "debtValue": "number | null",
+        "netWorth": "number | null",
         "totalReturn": "number | null",
         "totalReturnAvailable": "boolean",
         "unavailableCostBasisCount": "integer",
-        "missingCurrencyRates": "string[]"
+        "missingCurrencyRates": "string[]",
+        "valuationComplete": "boolean",
+        "missingValuations": [
+          {
+            "assetId": "string",
+            "reason": "missingValuationReason"
+          }
+        ],
+        "unavailableValuationCount": "integer",
+        "valuationCoveragePercent": "number"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false,
+        "idempotentHint": true
+      },
+      "_meta": {
+        "securitySchemes": [
+          {
+            "type": "oauth2",
+            "scopes": [
+              "mcp:read"
+            ]
+          }
+        ]
       }
     },
     {
@@ -97,6 +170,22 @@
         "name": "string",
         "baseCurrency": "string",
         "createdAt": "string"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false,
+        "idempotentHint": true
+      },
+      "_meta": {
+        "securitySchemes": [
+          {
+            "type": "oauth2",
+            "scopes": [
+              "mcp:read"
+            ]
+          }
+        ]
       }
     },
     {
@@ -145,13 +234,32 @@
         "source": "source",
         "quantity": "number",
         "currency": "string",
-        "marketValue": "number",
+        "marketValue": "number | null",
         "costBasis": "number | null",
         "costBasisStatus": "costBasisStatus",
         "totalReturn": "number | null",
         "totalReturnPercent": "number | null",
         "price24h": "number | null",
-        "conversionComplete": "boolean"
+        "conversionComplete": "boolean",
+        "valuationAvailable": "boolean",
+        "assetMetadataAvailable": "boolean",
+        "missingValuationReasons": "missingValuationReason[]"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false,
+        "idempotentHint": true
+      },
+      "_meta": {
+        "securitySchemes": [
+          {
+            "type": "oauth2",
+            "scopes": [
+              "mcp:read"
+            ]
+          }
+        ]
       }
     },
     {
@@ -187,6 +295,22 @@
         "amount": "number",
         "currency": "string",
         "asOf": "string"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false,
+        "idempotentHint": true
+      },
+      "_meta": {
+        "securitySchemes": [
+          {
+            "type": "oauth2",
+            "scopes": [
+              "mcp:read"
+            ]
+          }
+        ]
       }
     },
     {
@@ -425,6 +549,22 @@
           "data"
         ],
         "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false,
+        "idempotentHint": true
+      },
+      "_meta": {
+        "securitySchemes": [
+          {
+            "type": "oauth2",
+            "scopes": [
+              "mcp:read"
+            ]
+          }
+        ]
       }
     },
     {
@@ -461,10 +601,30 @@
             "portfolio": "string",
             "account": "string",
             "quantity": "number",
-            "marketValue": "number",
+            "marketValue": "number | null",
             "costBasis": "number | null",
             "costBasisStatus": "costBasisStatus",
-            "totalReturn": "number | null"
+            "totalReturn": "number | null",
+            "valuationAvailable": "boolean",
+            "assetMetadataAvailable": "boolean",
+            "missingValuationReasons": "missingValuationReason[]",
+            "conversionComplete": "boolean"
+          }
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false,
+        "idempotentHint": true
+      },
+      "_meta": {
+        "securitySchemes": [
+          {
+            "type": "oauth2",
+            "scopes": [
+              "mcp:read"
+            ]
           }
         ]
       }
@@ -851,6 +1011,22 @@
           "data"
         ],
         "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false,
+        "idempotentHint": true
+      },
+      "_meta": {
+        "securitySchemes": [
+          {
+            "type": "oauth2",
+            "scopes": [
+              "mcp:read"
+            ]
+          }
+        ]
       }
     },
     {
@@ -1442,6 +1618,22 @@
           "data"
         ],
         "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false,
+        "idempotentHint": true
+      },
+      "_meta": {
+        "securitySchemes": [
+          {
+            "type": "oauth2",
+            "scopes": [
+              "mcp:read"
+            ]
+          }
+        ]
       }
     },
     {
@@ -1640,6 +1832,22 @@
           "data"
         ],
         "additionalProperties": false
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false,
+        "idempotentHint": true
+      },
+      "_meta": {
+        "securitySchemes": [
+          {
+            "type": "oauth2",
+            "scopes": [
+              "mcp:read"
+            ]
+          }
+        ]
       }
     }
   ],
@@ -1647,5 +1855,118 @@
     "spending:read",
     "budgets:read"
   ],
-  "supplementalPermissionPolicy": "Explicit per-client grants in Fillfolio Settings. Not part of default OAuth scopes; existing grants do not expand. ULTRA/HYPER and a spending-enabled bank are required for spending data. All calls read stored data only."
+  "supplementalPermissionPolicy": "Explicit per-client grants in Fillfolio Settings. Not part of default OAuth scopes; existing grants do not expand. ULTRA/HYPER and a spending-enabled bank are required for spending data. All calls read stored data only.",
+  "authentication": {
+    "resource": "https://fillfolio.com/api/mcp",
+    "protectedResourceMetadata": "https://fillfolio.com/.well-known/oauth-protected-resource/api/mcp",
+    "authorizationServerMetadata": "https://fillfolio.com/.well-known/oauth-authorization-server",
+    "oauthScopes": [
+      "mcp:read"
+    ],
+    "codeChallengeMethods": [
+      "S256"
+    ],
+    "tokenEndpointAuthMethods": [
+      "none"
+    ],
+    "clientIdMetadataDocumentSupported": true,
+    "dynamicClientRegistration": false,
+    "clientPolicy": "Exact preregistered client identities and callbacks only. Keep native hosts on their accepted identity; arbitrary metadata URLs are not accepted.",
+    "legacyClient": {
+      "clientId": "HfY4RTp08YeBNRYm",
+      "issuer": "Existing Clerk configurations only; follow their accepted settings. This ID is not a universal client ID for the current issuer."
+    },
+    "scopePolicy": "Top-level scopes and each tool scope describe Fillfolio internal read grants. New authorization requests to the current issuer use mcp:read; supplemental spending/budget permissions remain independent per-client application grants."
+  },
+  "resources": [
+    {
+      "uri": "ui://fillfolio/dashboard-v4.html",
+      "name": "Fillfolio dashboard",
+      "title": "Fillfolio dashboard",
+      "description": "Read-only Fillfolio dashboard for ChatGPT",
+      "mimeType": "text/html;profile=mcp-app",
+      "_meta": {
+        "ui": {
+          "domain": "https://chatgpt.fillfolio.com",
+          "csp": {
+            "connectDomains": [],
+            "resourceDomains": [],
+            "frameDomains": []
+          }
+        },
+        "openai/widgetCSP": {
+          "redirect_domains": [
+            "https://fillfolio.com"
+          ]
+        }
+      }
+    },
+    {
+      "uri": "ui://fillfolio/dashboard-v1.html",
+      "name": "Fillfolio dashboard",
+      "title": "Fillfolio dashboard",
+      "description": "Read-only Fillfolio dashboard for ChatGPT",
+      "mimeType": "text/html;profile=mcp-app",
+      "_meta": {
+        "ui": {
+          "domain": "https://chatgpt.fillfolio.com",
+          "csp": {
+            "connectDomains": [],
+            "resourceDomains": [],
+            "frameDomains": []
+          }
+        },
+        "openai/widgetCSP": {
+          "redirect_domains": [
+            "https://fillfolio.com"
+          ]
+        }
+      }
+    },
+    {
+      "uri": "ui://fillfolio/dashboard-v2.html",
+      "name": "Fillfolio dashboard",
+      "title": "Fillfolio dashboard",
+      "description": "Read-only Fillfolio dashboard for ChatGPT",
+      "mimeType": "text/html;profile=mcp-app",
+      "_meta": {
+        "ui": {
+          "domain": "https://chatgpt.fillfolio.com",
+          "csp": {
+            "connectDomains": [],
+            "resourceDomains": [],
+            "frameDomains": []
+          }
+        },
+        "openai/widgetCSP": {
+          "redirect_domains": [
+            "https://fillfolio.com"
+          ]
+        }
+      }
+    },
+    {
+      "uri": "ui://fillfolio/dashboard-v3.html",
+      "name": "Fillfolio dashboard",
+      "title": "Fillfolio dashboard",
+      "description": "Read-only Fillfolio dashboard for ChatGPT",
+      "mimeType": "text/html;profile=mcp-app",
+      "_meta": {
+        "ui": {
+          "domain": "https://chatgpt.fillfolio.com",
+          "csp": {
+            "connectDomains": [],
+            "resourceDomains": [],
+            "frameDomains": []
+          }
+        },
+        "openai/widgetCSP": {
+          "redirect_domains": [
+            "https://fillfolio.com"
+          ]
+        }
+      }
+    }
+  ],
+  "dashboardSharing": "Opening a view sends that view's displayed financial data into model context. Discuss selection shares selected rows or a category. Hide amounts changes only the panel display and does not retract prior context."
 }
