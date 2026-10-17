@@ -12,6 +12,14 @@ Reviewed October 16, 2026. Use this guide with the [public contract](README.md) 
 
 Fillfolio has registered identities for ChatGPT, Codex, Claude web and Claude Code. Existing ChatGPT Work desktop and Codex setups passed live acceptance before this guide; this change adds no new host acceptance result. Claude registrations do not establish a successful live connection. Cursor, VS Code, Cline and other hosts require an accepted client registration and callback before compatibility can be claimed. [MCP authorization specification](https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization)
 
+## Gemini CLI
+
+The [Fillfolio Gemini CLI extension](https://github.com/fillfolio/portfolio-mcp-skills/blob/main/docs/gemini-cli.md) bundles the fifteen skills and remote MCP configuration. Version 0.1.1 is in preparation; server activation and live acceptance remain pending. Follow the extension guide's status before installing.
+
+After activation, live acceptance and release publication pass, install the extension from `fillfolio/portfolio-mcp-skills` and use `/mcp auth fillfolio`. Its public client ID is `fillfolio-gemini-cli`, its scope is `mcp:read`, and its exact callback is `http://localhost:7777/oauth/callback`. Leave port 7777 free. The [standalone settings example](examples/gemini-settings.json) uses the same registration; choose the extension or settings entry to avoid duplicate configuration.
+
+The host derives resource `https://fillfolio.com/api/mcp` from the endpoint. Fillfolio requires PKCE S256 and browser consent. Users supply their own Gemini account and quota; Fillfolio funds no model usage. Gemini dashboard rendering remains unverified; use the available financial read tools.
+
 ## Codex
 
 If your setup does not already expose Fillfolio, add this entry to `~/.codex/config.toml`:

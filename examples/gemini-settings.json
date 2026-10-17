@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "fillfolio": {
+      "httpUrl": "https://fillfolio.com/api/mcp",
+      "oauth": {
+        "enabled": true,
+        "clientId": "fillfolio-gemini-cli",
+        "scopes": ["mcp:read"],
+        "redirectUri": "http://localhost:7777/oauth/callback"
+      }
+    }
+  }
+}

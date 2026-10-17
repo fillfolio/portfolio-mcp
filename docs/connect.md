@@ -19,6 +19,7 @@ Keep a native host's accepted identity. The legacy Clerk client ID belongs to ex
 | Codex | Existing setup passed live acceptance. Use the remote server entry and browser login below. |
 | Claude Code | Registered identity. Use its published identity and accepted callback; this snapshot adds no live acceptance result. |
 | Claude web | Registered identity. Use its custom-connector flow with an accepted identity; this snapshot adds no live acceptance result. |
+| Gemini CLI | Extension 0.1.1 is in preparation; server activation and live acceptance remain pending. See the [current Gemini guide](https://github.com/fillfolio/portfolio-mcp-skills/blob/main/docs/gemini-cli.md). |
 | Cursor, VS Code, and other hosts | Require an accepted client identity and callback before compatibility can be claimed. Read the conditional examples in the source guide. |
 
 ### Codex

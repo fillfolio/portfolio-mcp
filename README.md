@@ -13,6 +13,9 @@ This MIT repository contains the public tool contract, connection examples and r
 | Plans | [Fillfolio pricing](https://fillfolio.com/pricing) |
 | Official MCP Registry | [`com.fillfolio/mcp`](https://registry.modelcontextprotocol.io/v0.1/servers?search=com.fillfolio%2Fmcp) |
 | Workflow skills | [fillfolio/portfolio-mcp-skills](https://github.com/fillfolio/portfolio-mcp-skills) |
+| Gemini CLI extension | [Fillfolio for Gemini CLI](https://github.com/fillfolio/portfolio-mcp-skills/blob/main/docs/gemini-cli.md) |
+
+Fillfolio extension 0.1.1 for Gemini CLI is in preparation. It bundles the existing fifteen skills with a dedicated MCP connection; production activation and live acceptance remain pending. See its guide for the current status, exact client identity and callback. Antigravity can load selected standalone skills, but its Fillfolio account connection is not verified.
 
 ## Connect
 
