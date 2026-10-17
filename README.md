@@ -15,11 +15,11 @@ This MIT repository contains the public tool contract, connection examples and r
 | Workflow skills | [fillfolio/portfolio-mcp-skills](https://github.com/fillfolio/portfolio-mcp-skills) |
 | Gemini CLI extension | [Fillfolio for Gemini CLI](https://github.com/fillfolio/portfolio-mcp-skills/blob/main/docs/gemini-cli.md) |
 
-Fillfolio extension 0.1.1 for Gemini CLI is in preparation. It bundles the existing fifteen skills with a dedicated MCP connection; production activation and live acceptance remain pending. See its guide for the current status, exact client identity and callback. Antigravity can load selected standalone skills, but its Fillfolio account connection is not verified.
+Fillfolio extension 0.1.1 for Gemini CLI is in preparation. It bundles the existing fifteen skills with a dedicated MCP connection; full live acceptance remains pending. See its guide for the current status, exact client identity, callback and required `/mcp auth fillfolio` command. Antigravity can load selected standalone skills, but its Fillfolio account connection is not verified.
 
 ## Connect
 
-Use Streamable HTTP and let your host manage OAuth sign-in, consent, refresh and reconnection. Current public discovery advertises Fillfolio's authorization server, scope `mcp:read`, PKCE `S256`, public-client authentication (`none`) and Client ID Metadata Document support. Dynamic Client Registration is disabled.
+Use Streamable HTTP and let your host manage OAuth sign-in, consent, refresh and reconnection. Current public discovery advertises Fillfolio's authorization server, scope `mcp:read`, PKCE `S256`, public-client authentication (`none`) and Client ID Metadata Document support. Fillfolio does not offer general-purpose client registration. Its limited registration endpoint returns only the existing Docker Gateway registration.
 
 | Discovery document | URL |
 | --- | --- |
