@@ -7,7 +7,7 @@ Use **Streamable HTTP** at `https://fillfolio.com/api/mcp`. Your host handles OA
 - Use an eligible paid Fillfolio account. Spending and budgets need active ULTRA/HYPER eligibility, bank-spending consent, and independent per-client read permissions.
 - Let the host read the [protected-resource metadata](https://fillfolio.com/.well-known/oauth-protected-resource/api/mcp) and [authorization-server metadata](https://fillfolio.com/.well-known/oauth-authorization-server).
 - Request OAuth scope `mcp:read`, use PKCE `S256`, and bind authorization to resource `https://fillfolio.com/api/mcp`.
-- Use an accepted registered client identity and exact callback. Fillfolio accepts specific Client ID Metadata Documents and disables Dynamic Client Registration. An arbitrary metadata URL or callback fails.
+- Use an accepted registered client identity and exact callback. Fillfolio accepts specific Client ID Metadata Documents; it does not offer general-purpose client registration. An arbitrary metadata URL or callback fails.
 
 Keep a native host's accepted identity. The legacy Clerk client ID belongs to existing legacy configurations; it is not a universal client ID for new hosts. Internal permissions such as `spending:read` are application grants, not extra OAuth scopes to request from the current issuer.
 
@@ -19,6 +19,7 @@ Keep a native host's accepted identity. The legacy Clerk client ID belongs to ex
 | Codex | Existing setup passed live acceptance. Use the remote server entry and browser login below. |
 | Claude Code | Registered identity. Use its published identity and accepted callback; this snapshot adds no live acceptance result. |
 | Claude web | Registered identity. Use its custom-connector flow with an accepted identity; this snapshot adds no live acceptance result. |
+| Gemini CLI | Extension 0.1.1 is in preparation; full live acceptance remains pending. After publication, run `/mcp auth fillfolio` for initial authorization and reauthorization. See the [current Gemini guide](https://github.com/fillfolio/portfolio-mcp-skills/blob/main/docs/gemini-cli.md). |
 | Cursor, VS Code, and other hosts | Require an accepted client identity and callback before compatibility can be claimed. Read the conditional examples in the source guide. |
 
 ### Codex
