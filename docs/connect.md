@@ -2,6 +2,12 @@
 
 Use **Streamable HTTP** at `https://fillfolio.com/api/mcp`. Your host handles OAuth sign-in, consent, token refresh, and reconnection. Keep passwords, codes, and tokens in that interface.
 
+## Choose a connection profile
+
+The Gemini CLI extension uses `https://free-mcp.fillfolio.com/mcp` for Free and paid accounts, with OAuth `portfolio:read`. Its nine financial read tools enforce the current plan and explicit category consent; it provides no dashboard launcher or UI resource. Free access covers one selected manual portfolio and three active assets. Spending and budgets require eligible paid access and separate client permissions. See the Gemini section and [extension guide](https://github.com/fillfolio/portfolio-mcp-skills/blob/main/docs/gemini-cli.md) for its pending acceptance status.
+
+The following general setup applies to the legacy paid `https://fillfolio.com/api/mcp` profile. Keep the two profiles' client identities, scopes and resources separate.
+
 ## Connection requirements
 
 - Use an eligible paid Fillfolio account. Spending and budgets need active ULTRA/HYPER eligibility, bank-spending consent, and independent per-client read permissions.
@@ -15,7 +21,7 @@ Keep a native host's accepted identity. The legacy Clerk client ID belongs to ex
 
 | Host | Status and next step |
 | --- | --- |
-| ChatGPT Work desktop | Existing setup passed live acceptance. Use the plugin/connector flow available on your supported surface. Native plugin 0.1.1 remains In review. |
+| ChatGPT Work desktop | Existing setup passed live acceptance. Use the plugin/connector flow available on your supported surface. Consult its separate listing for current availability. |
 | Codex | Existing setup passed live acceptance. Use the remote server entry and browser login below. |
 | Claude Code | Registered identity. Use its published identity and accepted callback; this snapshot adds no live acceptance result. |
 | Claude web | Registered identity. Use its custom-connector flow with an accepted identity; this snapshot adds no live acceptance result. |

@@ -1,6 +1,12 @@
 # Connect an AI client to Fillfolio
 
-Reviewed October 16, 2026. Use this guide with the [public contract](README.md) and your host's current MCP documentation. Installing skill instructions does not connect an account.
+Gemini profile updated October 26, 2026; other host examples retain their earlier setup. Use this guide with the [public contract](README.md) and your host's current MCP documentation. Installing skill instructions does not connect an account.
+
+## Choose a connection profile
+
+The Gemini CLI extension uses `https://free-mcp.fillfolio.com/mcp` for Free and paid accounts, with OAuth `portfolio:read`. Its nine financial read tools enforce the current plan and explicit category consent; it provides no dashboard launcher or UI resource. Free access covers one selected manual portfolio and three active assets. Spending and budgets require eligible paid access and separate client permissions. See the Gemini section and [extension guide](https://github.com/fillfolio/portfolio-mcp-skills/blob/main/docs/gemini-cli.md) for its pending acceptance status.
+
+The following general setup applies to the legacy paid `https://fillfolio.com/api/mcp` profile. Keep the two profiles' client identities, scopes and resources separate.
 
 ## Before connecting
 
@@ -16,9 +22,9 @@ Fillfolio has registered identities for ChatGPT, Codex, Claude web and Claude Co
 
 The [Fillfolio Gemini CLI extension](https://github.com/fillfolio/portfolio-mcp-skills/blob/main/docs/gemini-cli.md) bundles the fifteen skills and remote MCP configuration. Version 0.1.1 is in preparation; full live acceptance remains pending. Follow the extension guide's status before installing.
 
-After live acceptance and release publication pass, install the extension from `fillfolio/portfolio-mcp-skills`. Before the first account read, run `/mcp auth fillfolio` inside Gemini CLI. Run it again when reauthorization is needed. Its public client ID is `fillfolio-gemini-cli`, its scope is `mcp:read`, and its exact callback is `http://localhost:7777/oauth/callback`. Leave port 7777 free. The [standalone settings example](examples/gemini-settings.json) uses the same registration; choose the extension or settings entry to avoid duplicate configuration.
+After live acceptance and release publication pass, install the extension from `fillfolio/portfolio-mcp-skills`. Before the first account read, run `/mcp auth fillfolio` inside Gemini CLI. Run it again when reauthorization is needed. Its public client ID is `fillfolio-free-gemini-cli`, its scope is `portfolio:read`, and its exact callback is `http://localhost:7777/oauth/callback`. Leave port 7777 free. The [standalone settings example](examples/gemini-settings.json) uses the same registration; choose the extension or settings entry to avoid duplicate configuration.
 
-The host derives resource `https://fillfolio.com/api/mcp` from the endpoint. Fillfolio requires PKCE S256 and browser consent. Users supply their own Gemini account and quota; Fillfolio funds no model usage. Gemini dashboard rendering remains unverified; use the available financial read tools.
+For Gemini, use endpoint and resource `https://free-mcp.fillfolio.com/mcp`. Fillfolio requires PKCE S256 and browser consent. Users supply their own Gemini account and quota; Fillfolio funds no model usage. This Gemini profile provides nine financial read tools and no dashboard launcher or UI resource.
 
 ## Codex
 
