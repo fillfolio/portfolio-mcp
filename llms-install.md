@@ -1,16 +1,30 @@
 # Connect an AI client to Fillfolio
 
-Reviewed October 16, 2026. Use this guide with the [public contract](README.md) and your host's current MCP documentation. Installing skill instructions does not connect an account.
+Gemini profile updated October 27, 2026; other host examples retain their earlier setup. Use this guide with the [public contract](README.md) and your host's current MCP documentation. Installing skill instructions does not connect an account.
+
+## Choose a connection profile
+
+The Gemini CLI extension uses `https://free-mcp.fillfolio.com/mcp` for Free and paid accounts, with OAuth `portfolio:read`. Its nine financial read tools enforce the current plan and explicit category consent; it provides no dashboard launcher or UI resource. Free access covers one selected manual portfolio and three active assets. Spending and budgets require eligible paid access and separate client permissions. See the Gemini section and [extension guide](https://github.com/fillfolio/portfolio-mcp-skills/blob/main/docs/gemini-cli.md) for its current acceptance results and limits.
+
+The following general setup applies to the legacy paid `https://fillfolio.com/api/mcp` profile. Keep the two profiles' client identities, scopes and resources separate.
 
 ## Before connecting
 
 1. Use an eligible paid Fillfolio account. Spending and budgets require active ULTRA/HYPER eligibility, bank-spending consent and independent per-client permissions.
 2. Configure Streamable HTTP at `https://fillfolio.com/api/mcp`.
 3. Let the host discover `https://fillfolio.com/.well-known/oauth-protected-resource/api/mcp` and the advertised authorization server. Request `mcp:read`, use PKCE `S256` and bind authorization to resource `https://fillfolio.com/api/mcp`.
-4. Use an accepted registered client identity and callback. Fillfolio supports specific CIMD registrations and disables Dynamic Client Registration. Arbitrary metadata URLs and callbacks fail. Native hosts should retain their own accepted identity.
+4. Use an accepted registered client identity and callback. Fillfolio supports specific CIMD registrations; it does not offer general-purpose client registration. Arbitrary metadata URLs and callbacks fail. Native hosts should retain their own accepted identity.
 5. Complete host-managed browser sign-in and read consent. Keep passwords, codes and tokens out of chat and configuration files.
 
 Fillfolio has registered identities for ChatGPT, Codex, Claude web and Claude Code. Existing ChatGPT Work desktop and Codex setups passed live acceptance before this guide; this change adds no new host acceptance result. Claude registrations do not establish a successful live connection. Cursor, VS Code, Cline and other hosts require an accepted client registration and callback before compatibility can be claimed. [MCP authorization specification](https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization)
+
+## Gemini CLI
+
+The [Fillfolio Gemini CLI extension](https://github.com/fillfolio/portfolio-mcp-skills/blob/main/docs/gemini-cli.md) bundles the fifteen skills and remote MCP configuration. Version 0.1.1 passes Free native checks and eight synthetic model cases with official CLI 0.65.0; live paid-plan tests are deferred. Follow the extension guide for current results.
+
+Install the extension from `fillfolio/portfolio-mcp-skills`. Before the first account read, run `/mcp auth fillfolio` inside Gemini CLI. Run it again when reauthorization is needed. Its public client ID is `fillfolio-free-gemini-cli`, its scope is `portfolio:read`, and its exact callback is `http://localhost:7777/oauth/callback`. Leave port 7777 free. The [standalone settings example](examples/gemini-settings.json) uses the same registration; choose the extension or settings entry to avoid duplicate configuration.
+
+For Gemini, use endpoint and resource `https://free-mcp.fillfolio.com/mcp`. Fillfolio requires PKCE S256 and browser consent. Users supply their own Gemini account and quota; Fillfolio funds no model usage. This Gemini profile provides nine financial read tools and no dashboard launcher or UI resource.
 
 ## Codex
 
@@ -39,7 +53,7 @@ Use Claude Code's registered published identity with the current endpoint. A sep
 
 ## Claude chat
 
-Add `https://fillfolio.com/api/mcp` through the custom-connector flow. Use Claude's published identity when it matches Fillfolio's accepted registration. Automatic registration cannot succeed with Fillfolio's disabled DCR. An own-client configuration needs an existing accepted public client ID and callback. Organization policy may require an owner to add the connector. This guide makes no new live-acceptance claim for Claude. [Official custom-connector guide](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)
+Add `https://fillfolio.com/api/mcp` through the custom-connector flow. Use Claude's published identity when it matches Fillfolio's accepted registration. Fillfolio does not dynamically register Claude clients. An own-client configuration needs an existing accepted public client ID and callback. Organization policy may require an owner to add the connector. This guide makes no new live-acceptance claim for Claude. [Official custom-connector guide](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp)
 
 ## Cursor
 

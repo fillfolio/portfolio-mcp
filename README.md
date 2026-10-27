@@ -2,21 +2,24 @@
 
 Read your [Fillfolio](https://fillfolio.com) portfolios, holdings, cash, liabilities, investment activity, bank spending and budgets from an AI client through [Model Context Protocol](https://modelcontextprotocol.io).
 
-This MIT repository contains the public tool contract, connection examples and request-bounding helper for Fillfolio's hosted service. Fillfolio operates the server at `https://fillfolio.com/api/mcp`; this repository does not contain its private application or a self-hostable server. Account access requires an eligible paid Fillfolio plan. The companion [15-workflow skill library](https://github.com/fillfolio/portfolio-mcp-skills) is free under MIT.
+This MIT repository contains the public tool contract, connection examples and request-bounding helper for Fillfolio's hosted service. Fillfolio operates the server at `https://fillfolio.com/api/mcp`; this repository does not contain its private application or a self-hostable server. The legacy endpoint requires an eligible paid Fillfolio plan. The Gemini profile described below supports Free and paid accounts through the separate plan-aware endpoint. The companion [15-workflow skill library](https://github.com/fillfolio/portfolio-mcp-skills) is free under MIT.
 
 | Resource | Link |
 | --- | --- |
-| MCP endpoint and resource | `https://fillfolio.com/api/mcp` |
+| Legacy MCP endpoint and resource | `https://fillfolio.com/api/mcp` |
 | Connection guide | [llms-install.md](llms-install.md) |
 | Public developer hub | [Contracts, skills, setup and examples](https://fillfolio.github.io/portfolio-mcp/) |
 | Product documentation | [fillfolio.com/mcp](https://fillfolio.com/mcp) |
 | Plans | [Fillfolio pricing](https://fillfolio.com/pricing) |
 | Official MCP Registry | [`com.fillfolio/mcp`](https://registry.modelcontextprotocol.io/v0.1/servers?search=com.fillfolio%2Fmcp) |
 | Workflow skills | [fillfolio/portfolio-mcp-skills](https://github.com/fillfolio/portfolio-mcp-skills) |
+| Gemini CLI extension | [Fillfolio for Gemini CLI](https://github.com/fillfolio/portfolio-mcp-skills/blob/main/docs/gemini-cli.md) |
+
+Fillfolio extension 0.1.1 for Gemini CLI bundles the fifteen canonical skills with a dedicated Free/paid MCP connection. The client is active. Free native checks and eight synthetic model cases pass with official CLI 0.65.0; live paid-plan tests are deferred. It uses `https://free-mcp.fillfolio.com/mcp`, public client `fillfolio-free-gemini-cli`, scope `portfolio:read`, and exact callback `http://localhost:7777/oauth/callback`. Free accounts can read one selected manual portfolio and three active assets. Eligible paid accounts can authorize further categories. This profile exposes the nine financial read tools, without `open_fillfolio` or a UI resource. Spending and budgets retain their paid-plan, consent and separate-permission requirements. Preserve the legacy paid Gemini registration for existing clients; do not substitute it when the new profile denies access. See its guide for the current status, exact client identity, callback and required `/mcp auth fillfolio` command. Antigravity can load selected standalone skills, but its Fillfolio account connection is not verified.
 
 ## Connect
 
-Use Streamable HTTP and let your host manage OAuth sign-in, consent, refresh and reconnection. Current public discovery advertises Fillfolio's authorization server, scope `mcp:read`, PKCE `S256`, public-client authentication (`none`) and Client ID Metadata Document support. Dynamic Client Registration is disabled.
+Use Streamable HTTP and let your host manage OAuth sign-in, consent, refresh and reconnection. Current public discovery advertises Fillfolio's authorization server, scope `mcp:read`, PKCE `S256`, public-client authentication (`none`) and Client ID Metadata Document support. Fillfolio does not offer general-purpose client registration. Its limited registration endpoint returns only the existing Docker Gateway registration.
 
 | Discovery document | URL |
 | --- | --- |
@@ -38,9 +41,9 @@ url = "https://fillfolio.com/api/mcp"
 
 Then run `codex mcp login fillfolio` and complete browser consent. See [llms-install.md](llms-install.md) before configuring a different host.
 
-## Ten tools
+## Legacy ten-tool contract
 
-The following is the full current interface. Actual discovery can expose a subset for a client's permissions, account eligibility or supported surface. The permission column describes Fillfolio's internal read grants, not extra OAuth scopes to request from the current issuer. All tools advertise OAuth `mcp:read` and read-only annotations.
+The following table describes the legacy `https://fillfolio.com/api/mcp` interface. The Gemini profile has the nine financial tools from this table, with OAuth `portfolio:read` metadata and plan-aware tool errors. Actual discovery can expose a subset for a client's permissions, account eligibility or supported surface. The permission column describes Fillfolio's internal read grants, not extra OAuth scopes to request from the current issuer. All tools advertise OAuth `mcp:read` and read-only annotations.
 
 | Tool | Read permission | Purpose |
 | --- | --- | --- |
@@ -63,7 +66,7 @@ Call `open_fillfolio` with `{}`. It returns launch text and UI metadata, rather 
 
 The dashboard loads only its selected view from stored data. Opening a view shares that view's displayed financial data with the chat. Discuss selection shares selected rows or a category. Hide amounts masks the panel only; the model still receives raw values, and masking cannot retract earlier context.
 
-The native Fillfolio ChatGPT plugin 0.1.1 is **In review** as of October 16, 2026. This repository's metadata version 1.0.1 and the companion skill library's version are separate releases. Do not infer public plugin availability from this contract.
+The native Fillfolio ChatGPT plugin has a separate listing and review status. This repository's metadata version 1.0.1 and the companion skill library's version are separate releases. Do not infer public plugin availability from this contract.
 
 ### Financial results
 

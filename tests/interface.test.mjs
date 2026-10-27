@@ -59,3 +59,12 @@ test("registry metadata describes only the hosted remote service and matches the
   assert.deepEqual(server.remotes, [{ type: "streamable-http", url: contract.resource }]);
   assert.equal("packages" in server, false);
 });
+
+
+test("Gemini settings preserve the separate Free/paid resource and exact registered identity", () => {
+  const server=readJson("../examples/gemini-settings.json").mcpServers.fillfolio;
+  assert.equal(server.httpUrl,"https://free-mcp.fillfolio.com/mcp");
+  assert.deepEqual(server.oauth,{enabled:true,clientId:"fillfolio-free-gemini-cli",scopes:["portfolio:read"],redirectUri:"http://localhost:7777/oauth/callback"});
+  assert.equal(contract.resource,"https://fillfolio.com/api/mcp");
+  assert.deepEqual(contract.authentication.oauthScopes,["mcp:read"]);
+});

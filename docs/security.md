@@ -8,14 +8,14 @@ Only the authenticated user's authorized records belong in a response. A prompt 
 
 ## Account and permission requirements
 
-The MIT contracts and skills are free public materials. Hosted account reads require an eligible paid Fillfolio plan and an accepted client. Spending and budgets require active ULTRA/HYPER eligibility, bank-spending consent, and independent client grants in Fillfolio Settings:
+The MIT contracts and skills are free public materials. The legacy `https://fillfolio.com/api/mcp` endpoint requires an eligible paid Fillfolio plan and an accepted client. The [Gemini profile](connect.md#choose-a-connection-profile) uses `https://free-mcp.fillfolio.com/mcp` and supports Free accounts with one selected manual portfolio and three active assets. Further categories follow the current plan and consent. Spending and budgets require active ULTRA/HYPER eligibility, bank-spending consent, and independent client grants in Fillfolio Settings:
 
 | Grant | Records |
 | --- | --- |
 | `spending:read` | Spending summary and bank transactions |
 | `budgets:read` | Monthly category limits and actuals |
 
-Enabling one grant does not enable the other. OAuth uses `mcp:read`; the names above describe internal application permissions. Provider coverage, available history, and account eligibility still apply.
+Enabling one grant does not enable the other. Legacy OAuth uses `mcp:read`; Gemini uses `portfolio:read`. The names above describe internal application permissions. Provider coverage, available history, and account eligibility still apply.
 
 ## Financial records shared with your AI host
 
