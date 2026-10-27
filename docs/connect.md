@@ -4,7 +4,7 @@ Use **Streamable HTTP** at `https://fillfolio.com/api/mcp`. Your host handles OA
 
 ## Choose a connection profile
 
-The Gemini CLI extension uses `https://free-mcp.fillfolio.com/mcp` for Free and paid accounts, with OAuth `portfolio:read`. Its nine financial read tools enforce the current plan and explicit category consent; it provides no dashboard launcher or UI resource. Free access covers one selected manual portfolio and three active assets. Spending and budgets require eligible paid access and separate client permissions. See the Gemini section and [extension guide](https://github.com/fillfolio/portfolio-mcp-skills/blob/main/docs/gemini-cli.md) for its pending acceptance status.
+The Gemini CLI extension uses `https://free-mcp.fillfolio.com/mcp` for Free and paid accounts, with OAuth `portfolio:read`. Its nine financial read tools enforce the current plan and explicit category consent; it provides no dashboard launcher or UI resource. Free access covers one selected manual portfolio and three active assets. Spending and budgets require eligible paid access and separate client permissions. See the Gemini section and [extension guide](https://github.com/fillfolio/portfolio-mcp-skills/blob/main/docs/gemini-cli.md) for its current acceptance results and limits.
 
 The following general setup applies to the legacy paid `https://fillfolio.com/api/mcp` profile. Keep the two profiles' client identities, scopes and resources separate.
 
@@ -25,7 +25,7 @@ Keep a native host's accepted identity. The legacy Clerk client ID belongs to ex
 | Codex | Existing setup passed live acceptance. Use the remote server entry and browser login below. |
 | Claude Code | Registered identity. Use its published identity and accepted callback; this snapshot adds no live acceptance result. |
 | Claude web | Registered identity. Use its custom-connector flow with an accepted identity; this snapshot adds no live acceptance result. |
-| Gemini CLI | Extension 0.1.1 is in preparation; full live acceptance remains pending. After publication, run `/mcp auth fillfolio` for initial authorization and reauthorization. See the [current Gemini guide](https://github.com/fillfolio/portfolio-mcp-skills/blob/main/docs/gemini-cli.md). |
+| Gemini CLI | Extension 0.1.1 passes Free native checks and eight synthetic model cases with official CLI 0.65.0; live paid tests are deferred. Run `/mcp auth fillfolio` for initial authorization and reauthorization. See the [current Gemini guide](https://github.com/fillfolio/portfolio-mcp-skills/blob/main/docs/gemini-cli.md). |
 | Cursor, VS Code, and other hosts | Require an accepted client identity and callback before compatibility can be claimed. Read the conditional examples in the source guide. |
 
 ### Codex
